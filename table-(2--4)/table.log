@@ -1,0 +1,59 @@
+  
+= ----- 2015/2/1 星期日 下午 15:57:38
+= MRDCL version 2011.1 Startup
+= E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\test\table.stp
+= Copyright 1990 - 2009 MRDC Software, Kent, England
+  CEP
+  CSV 2002 style
+  NOLSUM
+  OLDNAMES
+  OLDWQ
+  TIDY
+  C(A)<listdata>=DATA.CSV
+  C(A)=..\ddm\Laundry-TW1.DAT
+  C(A)=..\ddm\TEST-M1.DAT
+  C(A)=..\ddm\TEST-M2.DAT
+  OUTPUT=..\OUTPUT\LAUNDRY#(2&3)-TEST.TAB
+  CHARSET=DOUBLE
+= MRDCL version 2011.1 startup completed
+  
+= ----- 2015/2/1 星期日 下午 15:57:38
+= MRDCL compilation phase startup
+  Starting compilation
+= Stage 1 (data)
+= Stage 2 (tables)
+= MRDCL compilation phase completed
+  
+= ----- 2015/2/1 星期日 下午 15:57:38
+= MRDCL execution phase startup
+= Stage 1 (data)
+  CSV file column 2 used to set $W
+  CSV file column 3 used to set $M
+  Now opening file (A) number 2
+  E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\ddm\Laundry-TW1.DAT
+  Now opening file (A) number 3
+  E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\ddm\TEST-M1.DAT
+>>MRDCL 2011.1 Question number 0401
+>>A faulty serial number has been found in the data file.  Do you wish to see this error message again?
+  Now opening file (A) number 4
+  E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\ddm\TEST-M2.DAT
+=  Data lines read 12843
+=  Records 12843
+  Number of times reached finish data 12843
+  Write commands rejected 2180
+  Write commands accepted 10663
+  IDF records 10663
+= Stage 2 (tables)
+  Records to be read 10663
+  Passes needed 3
+= MRDCL execution phase completed
+  
+= ----- 2015/2/1 星期日 下午 15:57:38
+= MRDCL print phase startup
+= MRDCL print phase completed
+= CL run completed
+  Data lines read 12843
+  IDF data records 10663
+  Table pages 67
+  
+= ----- 2015/2/1 星期日 下午 15:57:38

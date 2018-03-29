@@ -1,0 +1,316 @@
+
+VT $tw='Wave',
+VT $tm='Module',
+VT $tdl='Samples',
+VT $tpt='平台',
+VT $tori='定向',
+
+VT $tct='City tier',
+VT $tregion='Region',
+VT $tprovince='Province',
+VT $tcity='City',
+
+
+VT $TA1='(A1) A1.请问您的实际年龄是多少（单选）？May I ask you how old you are？（Single answer）',
+VT $TA2='(A2) A2.请问您本人过去12个月是否购买过以下洗衣产品？（可多选）',
+VT $TA3='(A3) A3.请问你家庭常住人口是多少？（单选）',
+VT $TA4='(A4) A4.请问您家庭每个月的税后总收入是多少？（包括工资， 奖金， 津贴等）（单选）',
+VT $TB0='(B0) TOMA',
+VT $TB1='(B1) UBA',
+VT $TB2='(B2) B2.ABA (Aided brand awareness) ：请点选你听过或看过的品牌（可多选）',
+VT $TB3='(B3) B3.P3M：请问在过去三个月，您购买过哪些品牌的家庭洗衣用品（洗衣液/洗衣粉/洗衣皂/洗衣凝珠）呢？（可多选）',
+VT $TB4='(B4) B4.CONSIDERATION：如果买不到上述品牌，你会考虑替代的品牌是？Assume any other brands you are to purchase as a substitute  if your most frequent-buying brand is out of stock. (Multiple-answer question/ Open Question)',   
+VT $TBS4='(BS4) BS4 CONSIDERATION SET：如果买不到上述品牌，你会考虑替代的品牌是？',		
+VT $TB501 ='(B501 ) B5 品牌OAR-碧浪 Ariel',
+VT $TB502 ='(B502 ) B5 品牌OAR-蓝月亮 Blue Moon',
+VT $TB503 ='(B503 ) B5 品牌OAR-超能 Chaoneng',
+VT $TB504 ='(B504 ) B5 品牌OAR-雕牌 Diaopai',
+VT $TB505 ='(B505 ) B5 品牌OAR-立白 Liby',
+VT $TB506 ='(B506 ) B5 品牌OAR-奥妙 Omo',
+VT $TB507 ='(B507 ) B5 品牌OAR-汰渍 Tide',
+VT $TB508 ='(B508 ) B5 品牌OAR-好爸爸 Kispa',
+VT $TB509 ='(B509 ) B5 品牌OAR-洁霸 Attack',
+VT $TB5010='(B5010) B5 品牌OAR-威露士Walch',	
+VT $TB5011='(B5011) B5 品牌OAR-白猫 Baimao',
+VT $TC1='(C1) CAA：最近您看过以下哪些品牌的广告或产品信息？（包括视频广告，户外，店内等）（可多选）',
+
+VT $TC201='(C201) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过碧浪 Ariel品牌的广告或产品信息呢？(可多选)',
+VT $TC202 ='(C202) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过蓝月亮 Blue Moon品牌的广告或产品信息呢？(可多选)',
+VT $TC203 ='(C203) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过超能 Chaoneng品牌的广告或产品信息呢？(可多选)',
+VT $TC204 ='(C204) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过雕牌 Diaopai品牌的广告或产品信息呢？(可多选)',
+VT $TC205 ='(C205) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过立白 Liby品牌的广告或产品信息呢？(可多选)',
+VT $TC206 ='(C206) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过奥妙 Omo品牌的广告或产品信息呢？(可多选)',
+VT $TC207 ='(C207) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过汰渍 Tide品牌的广告或产品信息呢？(可多选)',
+VT $TC208 ='(C208) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过好爸爸 Kispa品牌的广告或产品信息呢？(可多选)',
+VT $TC209 ='(C209) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过洁霸 Attack品牌的广告或产品信息呢？(可多选)',
+VT $TC2010='(C2010) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过威露士Walch品牌的广告或产品信息呢？(可多选)',
+VT $TC2011='(C2011) SOA：（针对C1选择的品牌询问）您是通过什么渠道看到或听到过白猫 Baimao品牌的广告或产品信息呢？(可多选)',
+
+VT $TC3='(C3) Copy Awareness：（出示广告图片）请点选你最近看过的广告（可多选）。请下拉页面看到所有广告。',
+[*DO A=1:15]
+VT $TC40[A]='(C40[A])C4.Copy Brand linkage (Open-end)：这是哪个品牌的广告？（开放题）',
+[*END A]
+
+VT $TC5='(C5) C5.Tide Color广告传达的主要产品功效是？',
+VT $TC6='(C6) C6.Ariel Neptune Liutao 15s video广告传达的主要产品功效是？',
+VT $TC7='(C7) C7 以下广告传达的主要产品功效是？（单选）-Tide_Tide Ambrosia TVC National',
+VT $TC8='(C8) C8.以下广告传达的主要产品功效是？（单选）-ARIEL_AE443_NEP_15S_National',
+                                                                                                                               
+VT $TTF101 ='(F101 ) F101 .Equity attribute-碧浪 Ariel',
+VT $TTF102 ='(F102 ) F102 .Equity attribute-蓝月亮 Blue Moon',
+VT $TTF103 ='(F103 ) F103 .Equity attribute-超能 Chaoneng',
+VT $TTF104 ='(F104 ) F104 .Equity attribute-雕牌 Diaopai',
+VT $TTF105 ='(F105 ) F105 .Equity attribute-立白 Liby',
+VT $TTF106 ='(F106 ) F106 .Equity attribute-奥妙 Omo',
+VT $TTF107 ='(F107 ) F107 .Equity attribute-汰渍 Tide',
+VT $TTF108 ='(F108 ) F108 .Equity attribute-好爸爸 Kispa',
+VT $TTF109 ='(F109 ) F109 .Equity attribute-洁霸 Attack',
+VT $TTF1010='(F1010) F1010.Equity attribute-威露士Walch',
+VT $TTF1011='(F1011) F1011.Equity attribute-白猫 Baimao',
+
+VT $TD1='(D1) D1.（针对A1选择18-24岁人士）请问您是在校大学生吗？',
+VT $TCH1='(H1) H1.您是否有看过节目《亲爱的客栈》呢？		',
+VT $TCH2='(H2) H2.您在《亲爱的客栈》节目中看到过以下哪些品牌的产品？（多选）		',
+VT $TCH3='(H3) H3.你最记得碧浪洗衣液的什么特点？（单选）	',
+VT $TCH4='(H4) H4 请点选您听过或看过的洗衣凝珠产品（多选）',
+VT $TCH5='(H5) H5 请问你最近3个月使用过以下哪些产品（多选）',
+VT $TCH6='(H6) H6 您觉得汰渍三色球最主要的3个功效是?（多选，限选3个）	',
+VT $TCH7='(H7) H7 您觉得碧浪三色球最主要的3个功效是？（多选，限选3个）',
+VT $TCH8='(H8) H8 请问您不使用汰渍三色球的主要原因是？（可多选）',
+VT $TCH9='(H9) H9 请问您不使用碧浪三色球的主要原因是？（可多旋）	',
+
+
+!!HEADER1
+dm x $h1=
+t: "total",
+$b0/7   :"toma--taizi",   
+$b0/1   :"bilang",
+$b1/7    :"uba--taizi",
+$b1/1    :"bilang",
+
+$w/1    :"National***Aug*([~1])",
+$W/2    :"Sep*([~2])", 
+$W/3    :"Nov*([~3])",
+$W/4    :"Jan*([~4])",
+$W/5    :"March*([~5])",
+
+!$w/1.$REGION/1    :"East***Aug*([~1])",
+!$W/2.$REGION/1    :"Sep*([~2])",
+!$W/3.$REGION/1    :"Nov*([~3])",
+!$W/4.$REGION/1    :"Jan*([~4])",
+!
+!$w/1.$REGION/2    :"South***Aug*([~1])",
+!$W/2.$REGION/2    :"Sep*([~2])",
+!$W/3.$REGION/2    :"Nov*([~3])",
+!$W/4.$REGION/2    :"Jan*([~4])",
+!
+!$w/1.$REGION/3    :"West***Aug*([~1])",
+!$W/2.$REGION/3    :"Sep*([~2])",
+!$W/3.$REGION/3    :"Nov*([~3])",
+!$W/4.$REGION/3    :"Jan*([~4])",
+!
+!$w/1.$REGION/4    :"North***Aug*([~1])",
+!$W/2.$REGION/4    :"*Sep*([~2])",
+!$W/3.$REGION/4    :"Nov*([~3])",
+!$W/4.$REGION/4    :"Jan*([~4])",
+!
+!
+!
+!$w/1.$PROVINCE/23: "beijing***Aug*([~1])",
+!$w/2.$PROVINCE/23: "Sep*([~2])",
+!$w/3.$PROVINCE/23: "Nov*([~3])",
+!$w/4.$PROVINCE/23: "Jan*([~4])",
+!
+!$w/1.$PROVINCE/24: "shanghai***Aug*([~1])",
+!$w/2.$PROVINCE/24: "Sep*([~2])",
+!$w/3.$PROVINCE/24: "Nov*([~3])",
+!$w/4.$PROVINCE/24: "Jan*([~4])",
+!
+!$w/1.$PROVINCE/25: "guangzhou***Aug*([~1])",
+!$w/2.$PROVINCE/25: "Sep*([~2])",
+!$w/3.$PROVINCE/25: "Nov*([~3])",
+!$w/4.$PROVINCE/25: "Nov*([~4])",
+!
+!$w/1.$PROVINCE/26: "chengdu***Aug*([~1])",
+!$w/2.$PROVINCE/26: "Sep*([~2])",
+!$w/3.$PROVINCE/26: "Nov*([~3])",
+!$w/4.$PROVINCE/26: "Jan*([~4])",
+!
+!
+!$w/1.$CT/1    :"Top4***Aug*([~1])",
+!$W/2.$CT/1    :"Sep*([~2])",
+!$W/3.$CT/1    :"Nov*([~3])",
+!$W/4.$CT/1    :"Jan*([~4])",
+!
+!$w/1.$CT/2    :"A***Aug*([~1])",
+!$W/2.$CT/2    :"Sep*([~2])",
+!$W/3.$CT/2    :"Nov*([~4])",
+!$W/4.$CT/2    :"Jan*([~3])",
+!
+!$w/1.$CT/3    :"B***Aug*([~1])",
+!$W/2.$CT/3    :"Sep*([~2])",
+!$W/3.$CT/3    :"Nov*([~3])",
+!$W/4.$CT/3    :"Jan*([~4])",
+!
+!$w/1.$CT/4    :"C***Aug*([~1])",
+!$W/2.$CT/4    :"Sep*([~2])",
+!$W/3.$CT/4    :"Nov*([~3])",
+!$W/4.$CT/4    :"Jan*([~4])",
+!
+!$w/1.($REGION/4+$CITY/2..5)    :"North+4***Aug*([~1])",
+!$W/2.($REGION/4+$CITY/2..5)    :"*Sep*([~2])",
+!$W/3.($REGION/4+$CITY/2..5)    :"Nov*([~3])",
+!$W/4.($REGION/4+$CITY/2..5)    :"Jan*([~4])",
+!
+!$w/1.($REGION/4+$CITY/2..5).($A4/1+2)    :"North+4 China1+1***Aug*([~1])",
+!$W/2.($REGION/4+$CITY/2..5).($A4/1+2)    :"*Sep*([~2])",
+!$W/3.($REGION/4+$CITY/2..5).($A4/1+2)    :"Nov*([~3])",
+!$W/4.($REGION/4+$CITY/2..5).($A4/1+2)    :"Jan*([~4])",
+!
+!
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!$w/1    :"National***Aug*([~1])",
+!$W/2    :"Sep*([~2])", 
+!$W/3    :"Nov*([~3])",
+!$W/4    :"Jan*([~4])",
+!
+!$w/1.$A1/1    :"18-24***Aug*([~1])",
+!$W/2.$A1/1    :"Sep*([~2])",
+!$W/3.$A1/1    :"Nov*([~3])",
+!$W/4.$A1/1    :"Jan*([~4])",
+!
+!$w/1.$A1/2    :"25-34***Aug*([~1])",
+!$W/2.$A1/2    :"*Sep*([~2])",
+!$W/3.$A1/2    :"Nov*([~3])",
+!$W/4.$A1/2    :"Jan*([~4])",
+!
+!
+!$w/1.$A1/3    :"35-44***Aug*([~1])",
+!$W/2.$A1/3    :"Sep*([~2])",
+!$W/3.$A1/3    :"Nov*([~3])",
+!$W/4.$A1/3    :"Jan*([~4])",
+!
+!$w/1.$A1/4    :"45-55***Aug*([~1])",
+!$W/2.$A1/4    :"*Sep*([~2])",
+!$W/3.$A1/4    :"Nov*([~3])",
+!$W/4.$A1/4    :"Jan*([~4])",
+!
+!$w/1.($A4/1+2)    :"China1+1***Aug*([~1])",
+!$W/2.($A4/1+2)    :"Sep*([~2])",
+!$W/3.($A4/1+2)    :"Nov*([~3])",
+!$W/4.($A4/1+2)    :"Jan*([~4])",
+!
+!$w/1.$A4/1    :"China1+***Aug*([~1])",
+!$W/2.$A4/1    :"Sep*([~2])",
+!$W/3.$A4/1    :"Nov*([~3])",
+!$W/4.$A4/1    :"Jan*([~4])",
+!
+!$w/1.$A4/2    :"China1***Aug*([~1])",
+!$W/2.$A4/2    :"Sep*([~2])",
+!$W/3.$A4/2    :"Nov*([~3])",
+!$W/4.$A4/2    :"Jan*([~4])",
+!
+!$w/1.$A4/3    :"China2***Aug*([~1])",
+!$W/2.$A4/3    :"Sep*([~2])",
+!$W/3.$A4/3    :"Nov*([~3])",
+!$W/4.$A4/3    :"Jan*([~4])",
+!
+!$w/1.$A4/4    :"China3***Aug*([~1])",
+!$W/2.$A4/4    :"Sep*([~2])",
+!$W/3.$A4/4    :"Nov*([~3])",
+!$W/4.$A4/4    :"Jan*([~4])",
+!
+!
+!$w/1.$A2/1   :"Usage Liquid***Aug*([~1])",
+!$W/2.$A2/1    :"Sep*([~2])",
+!$W/3.$A2/1   :"Nov*([~3])",
+!$W/4.$A2/1   :"Jan*([~4])",
+!
+!$w/1.$A2/2    :"Usage Powder***Aug*([~1])",
+!$W/2.$A2/2    :"Sep*([~2])",
+!$W/3.$A2/2    :"Nov*([~3])",
+!$W/4.$A2/2    :"Jan*([~4])",
+!
+!$w/1.$A2/3    :"Usage Bar***Aug*([~1])",
+!$W/2.$A2/3    :"Sep*([~2])",
+!$W/3.$A2/3    :"Nov*([~3])",
+!$W/4.$A2/3    :"Jan*([~4])",
+
+xt $h1="Header A ",
+
+
+
+ 
+ 
+
+
+
+!!HEADER2
+dm x $h2=
+$W/1                     :"Aug***National*([~1])",
+$W/1.$A2/n(1+2+4+5+6+7)  :"P12M Product【Aug】***Bar only*([~1])",
+$W/1.$A2/3               :"Bar user*([~2])",
+$W/1.$A2/n3              :"Non-Bar User*([~3])",
+$W/1.$A2/n(2..7)         :"LQD only*([~4])",
+$W/1.$A2/1               :"LQD user*([~5])",
+$W/1.$A2/n(1+3+4+5+6+7)  :"PWD only*([~6])",
+$W/1.$A2/2               :"PWD*([~7])",
+$W/1.($A2/1.2)           :"LQD+PWD*([~8])",
+$W/1.($A2/1.3)           :"LQD+BAR*([~9])",
+$W/1.($A2/2.3)           :"PWD+BAR*([~10])",
+$W/1.$A2/n(1+2+3+5+6+7)  :"SUD ONLY*([~11])",
+$W/1.$A2/4               :"SUD USER*([~12])",
+
+$W/2                     :"Sep***National*([~1])",
+$W/2.$A2/n(1+2+4+5+6+7)  :"P12M Product【Sep】***Bar only*([~1])",
+$W/2.$A2/3               :"Bar user*([~2])",
+$W/2.$A2/n3              :"Non-Bar User*([~3])",
+$W/2.$A2/n(2..7)         :"LQD only*([~4])",
+$W/2.$A2/1               :"LQD user*([~5])",
+$W/2.$A2/n(1+3+4+5+6+7)  :"PWD only*([~6])",
+$W/2.$A2/2               :"PWD*([~7])",
+$W/2.($A2/1.2)           :"LQD+PWD*([~8])",
+$W/2.($A2/1.3)           :"LQD+BAR*([~9])",
+$W/2.($A2/2.3)           :"PWD+BAR*([~10])",
+$W/2.$A2/n(1+2+3+5+6+7)  :"SUD ONLY*([~11])",
+$W/2.$A2/4               :"SUD USER*([~12])",
+
+$W/3                     :"Nov***National*([~1])",
+$W/3.$A2/n(1+2+4+5+6+7)  :"P12M Product【Nov】***Bar only*([~1])",
+$W/3.$A2/3               :"Bar user*([~2])",
+$W/3.$A2/n3              :"Non-Bar User*([~3])",
+$W/3.$A2/n(2..7)         :"LQD only*([~4])",
+$W/3.$A2/1               :"LQD user*([~5])",
+$W/3.$A2/n(1+3+4+5+6+7)  :"PWD only*([~6])",
+$W/3.$A2/2               :"PWD*([~7])",
+$W/3.($A2/1.2)           :"LQD+PWD*([~8])",
+$W/3.($A2/1.3)           :"LQD+BAR*([~9])",
+$W/3.($A2/2.3)           :"PWD+BAR*([~10])",
+$W/3.$A2/n(1+2+3+5+6+7)  :"SUD ONLY*([~11])",
+$W/3.$A2/4               :"SUD USER*([~12])",
+
+$W/4                     :"Jan***National*([~1])",
+$W/4.$A2/n(1+2+4+5+6+7)  :"P12M Product【Jan】***Bar only*([~1])",
+$W/4.$A2/3               :"Bar user*([~2])",
+$W/4.$A2/n3              :"Non-Bar User*([~3])",
+$W/4.$A2/n(2..7)         :"LQD only*([~4])",
+$W/4.$A2/1               :"LQD user*([~5])",
+$W/4.$A2/n(1+3+4+5+6+7)  :"PWD only*([~6])",
+$W/4.$A2/2               :"PWD*([~7])",
+$W/4.($A2/1.2)           :"LQD+PWD*([~8])",
+$W/4.($A2/1.3)           :"LQD+BAR*([~9])",
+$W/4.($A2/2.3)           :"PWD+BAR*([~10])",
+$W/4.$A2/n(1+2+3+5+6+7)  :"SUD ONLY*([~11])",
+$W/4.$A2/4               :"SUD USER*([~12])",
+xt $h2="Header B ",
+
+ 
+
+ 
+ 
+ 
+ 
+ 

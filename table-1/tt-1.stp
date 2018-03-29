@@ -1,0 +1,441 @@
+[*set q='B0']
+  [*for b=1]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+    
+[*set q='B1']
+  [*for b=1]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h], 
+     endif,
+    [*end h]
+    [*end b]
+
+
+[*set q='B2']
+  [*for b=1]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+
+[*set q='B3']
+  [*for b=37]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='B4']
+  [*for b=60]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='BS4']
+  [*for b=37]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*DATA SEQ(;)=2;3;7;6;4;8;1;5;9;10;11;
+]
+
+[*set q='B5']
+  [*for b=37]
+  [*for h=1]
+    if $bb[b]/nb.$fiem/nb,then,  
+       t#b5n07=@$b5n07*$h[h],
+       V="[B5R.2]",
+       bt="b[b].[Base[b]]",   
+       VT="Equity Score",
+    endif, 
+    [*for A=1:2:5:8:4:3:6:9:10:11]
+    if $bb[b]/nb.$fiem/nb,then,
+       +t#b5n0[A]=@$b5n0[a]*$h[h], 
+       V="[B5R.[SEQ.A]*2]",
+    endif,
+    [*end a] 
+    [*end h]
+    [*end b]
+
+
+
+
+
+
+
+
+[*for A=7:1:2:5:8:4:3:6:9:10:11]
+[*set q='B50[A]']
+  [*for b=[A]+45]
+  [*for h=1]
+    if $bb[b]/nb.$B50[A]/NB, then,
+        t#[q][&b][h](F=SDV)=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+[*END A]
+
+T # SOAR(f=nitb/SDV) = $tB501 * $h4, 
+!!将11个品牌的数据依次插入1到9列
+[*for A=7:1:2:5:8:4:3:6:9:10:11]
+[*set q='B50[A]']
+  [*for b=[A]+45]
+    if $bb[b]/nb.$B50[A]/NB, then,
+        t# SOAR=$t[q]*[SEQ.A], 
+        bt="主品牌",  
+        vt="Summary OAR",
+     endif, 
+[*end b]    
+[*end a]
+
+
+
+[*for A=7:1:2:5:8:4:3:6:9:10:11]   
+[*set q='TF10[A]']
+  [*for b=[A]+2]
+  [*for h=1]
+    if $bb[b]/nb.$w/n1, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#CEQA[A](F=NDIS)=$TCEQA[A]*$h[h],
+        ENDIF,
+    if $bb[b]/nb.$w/1.$atb/n[a], then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#CEQA[A](F=NDIS)=$TCEQA[A]*$h[h],
+       
+    ENDIF,
+    [*end h]
+    [*end b]      
+[*END A]
+
+T # SEA(f=nitb) = $tTF101 * $h4, 
+!!!将11个品牌的数据依次插入1到9列
+[*for A=7:1:2:5:8:4:3:6:9:10:11] 
+[*set q='TF10[A]']
+  [*for b=[A]+2]
+    if $bb[b]/nb, then,
+        t# SEA=$t[q]*[SEQ.A], 
+        bt="主品牌",  
+        vt="Summary Equity attribute",
+     endif, 
+
+[*end b]    
+[*end a]
+
+T # SEAN(f=nitb) = $tTF101 * $h4, 
+!!!将11个品牌的数据依次插入1到9列
+[*for A=7:1:2:5:8:4:3:6:9:10:11] 
+[*set q='TF10[A]']
+  [*for b=[A]+2]
+    if $bb[b]/nb.$REGION/4, then,
+        t# SEAN=$t[q]*[SEQ.A], 
+        bt="ABA主品牌",  
+        vt="Summary Equity attribute-North",
+     endif, 
+[*end b]    
+[*end a]
+
+
+[*set q='C1']
+  [*for b=39]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*for A=7:1:2:5:8:4:3:6:9:10:11]
+[*set q='C20[A]']
+  [*for b=[A]+13]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+[*END A]
+
+
+[*set q='C3']
+  [*for b=38]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h](f=nRBL)=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+
+     endif,
+    [*end h]
+    [*end b] 
+
+
+[*data seq1(;)=25;26;27;28;29;30;31;32;33;34;35;36;57;58;59;]
+[*for A=13:14:4:15:7]
+[*set q='C40[A]']
+  [*for b=[seq1.a]]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h](F=BRS)=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+[*END A] 
+
+ 
+
+[*set q='C7']
+  [*for b=62]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]    
+ 
+[*set q='C8']
+  [*for b=63]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]    
+
+
+[*set q='A1']
+  [*for b=1]
+  [*for h=5]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+
+
+[*set q='A2']
+  [*for b=1]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+
+[*set q='A3']
+  [*for b=40]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+
+
+[*set q='A4']
+  [*for b=1]
+  [*for h=5]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+    
+   
+[*set q='D1']
+  [*for b=2]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+
+![*set q='CH1']
+!  [*for b=41]
+!  [*for h=1]
+!    if $bb[b]/nb, then,
+!        t#[q][&b][h]=$t[q]*$h[h],
+!        bt="b[b].[Base[b]]",
+!     endif,
+!    [*end h]
+!    [*end b]
+!
+![*set q='CH2']
+!  [*for b=42]
+!  [*for h=1]
+!    if $bb[b]/nb, then,
+!        t#[q][&b][h]=$t[q]*$h[h],
+!        bt="b[b].[Base[b]]",
+!     endif,
+!    [*end h]
+!    [*end b]
+!
+![*set q='CH3']
+!  [*for b=43]
+!  [*for h=1]
+!    if $bb[b]/nb, then,
+!        t#[q][&b][h]=$t[q]*$h[h],
+!        bt="b[b].[Base[b]]",
+!     endif,
+!    [*end h]
+!    [*end b]
+
+
+[*set q='CH4']
+  [*for b=61]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='CH5']
+  [*for b=68]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='CH6']
+  [*for b=64]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='CH7']
+  [*for b=65]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='CH8']
+  [*for b=66]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+[*set q='CH9']
+  [*for b=67]
+  [*for h=1]
+    if $bb[b]/nb, then,
+        t#[q][&b][h]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+        +t#ct[Q]=@$ct[Q]*$h[h],
+     endif,
+    [*end h]
+    [*end b]
+
+
+
+
+
+
+[*set q='ct']
+  [*for b=1]
+  [*for h=5]
+    if $bb[b]/nb, then,
+        t#[q]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+    
+[*set q='region']
+  [*for b=1]
+  [*for h=5]
+    if $bb[b]/nb, then,
+        t#[q]=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+
+    
+[*set q='PROVINCE']
+  [*for b=1]
+  [*for h=5]
+    if $bb[b]/nb, then,
+        t#[q](f=BRS)=$t[q]*$h[h],
+        bt="b[b].[Base[b]]",
+     endif,
+    [*end h]
+    [*end b]
+    
+[*set q='ori']
+  [*for b=1]
+  [*for h=1]
+    if $bb[b]/nb.$ori/nb, then,
+        t#[q]=$t[q]*$h[h],
+        bt="定向-base",
+     endif,
+    [*end h]
+    [*end b]
+

@@ -1,0 +1,94 @@
+!base number ; definition ; base label
+!note - base number should not duplidated
+
+
+
+[*data 999(m=p,t=;)=
+1;t;All Respondents;
+2;$A1/1;18-24岁;
+
+3 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/1  ;ABA-碧浪 Ariel;
+4 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/2  ;ABA-蓝月亮 Blue Moon; 
+5 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/3  ;ABA-超能 Chaoneng; 
+6 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/4  ;ABA-雕牌 Diaopai; 
+7 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/5  ;ABA-立白 Liby; 
+8 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/6  ;ABA-奥妙 Omo; 
+9 ;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/7 ;ABA-汰渍Tide; 
+10;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/8 ;ABA-好爸爸 Kispa; 
+11;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/9 ;ABA-洁霸 (Attack); 
+12;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/10;ABA-威露士(Walch); 
+13;((($w/1+2).$M/1)+(($w/3+4+5).$m/2)).$B2/11;ABA-白猫 Baimao;
+
+14;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/1 ;碧浪 Ariel      ;
+15;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/2 ;蓝月亮 Blue Moon;
+16;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/3 ;超能 Chaoneng  ;
+17;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/4 ;雕牌 Diaopai    ;
+18;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/5 ;立白 Liby       ;
+19;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/6 ;奥妙 Omo        ;
+20;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/7 ;汰渍Tide        ;
+21;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/8 ;好爸爸 Kispa    ;
+22;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/9 ;洁霸 (Attack)   ;
+23;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/10;威露士(Walch)   ;
+24;((($w/1+2).$M/2)+(($w/3+4+5).$m/1)).$C1/11;白猫 Baimao ;
+             
+25;$M/2.$C3/1;TD1069_Tide Neptune Color TVC 15s  ;  
+26;$M/2.$C3/2;Kispa Huanglei babysiting_15s;  
+27;$M/2.$C3/3;Chaoneng Stylish Superwoman_Sunli 30s;  
+28;$M/2.$C3/4;Liby_Natural Soap Liquid-AB couple 15s;
+29;$M/2.$C3/5;Ariel Neptune Liutao 15s video;  
+30;$M/2.$C3/6;Bluemoon_Zhizun Liu Wen_15s;
+31;$M/2.$C3/7;Bluemoon_Zhizun Peng Yuyan_15s; 
+32;$M/2.$C3/8;Ariel_Ariel Matic W2 EZR (Nat Ver2) 15s;         
+33;$M/2.$C3/9 ;Tide Complete_15s;  
+34;$M/2.$C3/10;OMO-Live in omo life-15s;
+35;$M/2.$C3/11;Bluemoon Liuwen-30s; 
+36;$M/2.$C3/12;Bluemoon Peng Yuyan_30s;  
+     
+37;$M/1;M1;   
+38;$M/2;M2;
+39;(($w/1+2).$M/2)+(($w/3+4+5).$m/1);CAA;                   
+40;$W/N1;no w1;
+41;$w/3.$m/2;201711M2;
+
+42;$w/3.$m/2.$CH1/1;在《亲爱的客栈》节目中看到过以下品牌 ;
+43;$w/3.$m/2.$CH2/2;在《亲爱的客栈》节目中看到过以下品牌;
+44;$w/3.$m/2.$C3/1.$C401/7;看过TD1069_Tide Neptune Color TVC 15s 并认知正确;
+45;$w/3.$m/2.$C3/5.$C405/1;看过Ariel Neptune Liutao 15s video并认知正确;
+
+46;$M/1.$B2/1 ;ABA-碧浪 Ariel;       
+47;$M/1.$B2/2 ;ABA-蓝月亮 Blue Moon; 
+48;$M/1.$B2/3 ;ABA-超能 Chaoneng;    
+49;$M/1.$B2/4 ;ABA-雕牌 Diaopai;     
+50;$M/1.$B2/5 ;ABA-立白 Liby;        
+51;$M/1.$B2/6 ;ABA-奥妙 Omo;         
+52;$M/1.$B2/7 ;ABA-汰渍Tide;         
+53;$M/1.$B2/8 ;ABA-好爸爸 Kispa;     
+54;$M/1.$B2/9 ;ABA-洁霸 (Attack);    
+55;$M/1.$B2/10;ABA-威露士(Walch);    
+56;$M/1.$B2/11;ABA-白猫 Baimao;
+
+57;$M/2.$C3/13;Tide_Tide Ambrosia TVC National;  
+58;$M/2.$C3/14;ARIEL_AE443_NEP_15S_National;  
+59;$M/2.$C3/15;Chaoneng APG washing liquid_Sunli 15s ;
+
+60;(($W/1..3).$M/1)+(($w/4+5).$M/1.CT($B3)/n11);Consideration base;
+61;$W/4.$M/2;201801M2;
+62;$w/4.$m/2.$C3/13.$C4013/7;看过Tide_Tide Ambrosia TVC National并认知正确;
+63;$w/4.$m/2.$C3/14.$C4014/1;看过ARIEL_AE443_NEP_15S_National并认知正确;
+64;$w/4.$m/2.$CH5/1;使用过汰渍三色球;
+65;$w/4.$m/2.$CH5/2;使用过碧浪三色球;
+66;$w/4.$m/2.$CH4/1.$CH5/N1;看过但没使用过汰渍三色球;
+67;$w/4.$m/2.$CH4/2.$CH5/N2;看过但没使用过碧浪三色球;
+68;$w/4.$m/2.$ch4/nb.$CH4/N998;看过或听过洗衣凝珠产品;
+
+69;$M/2.$C3/16;OMO Have fun not afraid of blot_15s;  
+70;$M/2.$C3/17;Kispa with ZYJ2 Movie 
+    
+]    
+  [*do i=1:[999.#]:3][*set BaseNo=999.i]
+    ds $bb[BaseNo]=[999.i+1],
+    x  $bb[BaseNo]='Base [BaseNo] - [999.i+2]',
+    xt $bb[BaseNo]='Base [BaseNo] - [999.i+2]',
+
+    [*set Base[BaseNo]='[999.i+2]']
+  [*end i]

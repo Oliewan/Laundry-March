@@ -1,0 +1,1961 @@
+[*data WR(;)=
+
+1;WAVE1 ;
+2;WAVE2;
+3;WAVE3;
+4;WAVE4;
+
+]
+
+[*set Q='W']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+[*data MR(;)=
+
+1;Module1;
+2;Module2;
+]
+
+[*set Q='M']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+[*data DLR(;)=
+
+1;Delete;
+]
+
+[*set Q='DL']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+
+
+
+
+[*data ptR(;)=
+
+1;GDT;
+2;NRT;
+
+]
+
+[*set Q='pt']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+[*data oriR(;)=
+
+1;兴趣定向(x);
+2;app定向(a);
+3;移动媒体类型定向(l);
+
+]
+
+[*set Q='ori']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+
+[*data CTR(;)=
+
+1;TOP 4 ;
+2;A;
+3;B;
+4;C;
+
+]
+
+[*set Q='CT']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+
+[*data REGIONR(;)=
+
+1;E;
+2;S;
+3;W;
+4;N;
+
+]
+
+[*set Q='REGION']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+              
+
+IF $CITY/1,di $PROVINCE=23,  
+IF $CITY/2,di $PROVINCE=24,
+IF $CITY/3,di $PROVINCE=25,
+IF $CITY/4,di $PROVINCE=26,
+IF $CITY/10,di $PROVINCE=15,
+
+
+
+
+[*data PROVINCER(;)=
+23;北京;  
+24;上海;
+25;广州;
+26;成都;
+1;河南;
+2;江苏;
+3;浙江;
+4;河北;
+5;黑龙江;
+6;辽宁;
+7;山东;
+8;天津;
+9;福建;
+10+25;广东(包含广州);
+11;湖北;
+12;湖南;
+13;陕西;
+14;云南;
+15;重庆;
+16+26;四川(包含成都);
+17;广西;
+
+10+25;广东;
+17+14;广西，贵州，云南;
+11+12;湖南，湖北;
+13+16+26+15;陕西，四川，重庆;
+1;河南,安徽;
+7+4;山东,山西,河北;
+9;江西,福建;
+5+6;黑龙江,吉林,辽宁;
+2+3;浙江,江苏;
+25;广州;
+26;成都;
+24;上海;
+23;北京;
+
+]
+
+[*set Q='PROVINCE']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',              
+           
+
+[*data cityR(;)=
+1;北京;
+2;上海;
+3;广州;
+4;成都;
+5;深圳;
+15;重庆;
+
+]
+
+[*set Q='city']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>', 
+
+
+
+              
+[*data A1R(;)=
+1;18-24岁  18-24 years old;
+2;25-34岁  25-34 years old;
+3;35-44岁  35-44 years old;
+4;45-55岁  45-55 years old;
+]
+
+[*set Q='A1']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><S>',
+
+[*data A2R(;)=
+1;洗衣液;
+2;洗衣粉;
+3;洗衣皂;
+4;洗衣凝珠;
+5;衣物柔顺剂;
+6;消毒液（如滴露、威露士）;
+7;以上均没有;
+]
+
+[*set Q='A2']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+[*data A3R(;)=
+1;1人;
+2;2人;
+3;3人;
+4;4人;
+5;5人;
+6;6人;
+7;7人或以上;
+]
+
+[*set Q='A3']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+[*data A4R(;)=
+1;china1+（7000以上） ;
+2;china 1（4000-7000）;
+3;china 2（2000-4000）;
+4;China 3（低于2000） ;
+
+]
+
+[*set Q='A4']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+
+
+!!!UBA首次提及当成TOMA
+IF $B0/160,DI $B0=999,
+IF $B0/161,DI $B0=997,
+IF $B0/162,DI $B0=998,
+[*data B0R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+12;安利;
+13;传化;
+14;洛娃;
+15;绿伞;
+16;妈妈壹选;
+17;爱护;
+18;芭菲;
+19;贝亲;
+20;船牌;
+21;迪可浓;
+22;笛梵;
+23;芳草;
+24;斧头牌;
+25;乖乖乐;
+26;添富好妈妈;
+27;威猛先生;
+28;好太太;
+29;全职好太太;
+30;惠氏;
+31;加菲猫;
+32;加佳;
+33;家家宜;
+34;家中福;
+35;匠人;
+36;洁宜佳;
+37;光明开尔;
+38;康涤;
+39;康婴健;
+40;浪奇;
+41;绿叶爱生活;
+42;韩汰;
+43;美贰玖;
+44;美乐家;
+45;欧丝宝;
+46;奈斯;
+47;鹏锦;
+48;奇强;
+49;浅语;
+50;强生婴儿;
+51;巧媳妇;
+52;三沐源;
+53;扇牌;
+54;狮王;
+55;双猫;
+56;搜乐;
+57;无限极;
+58;小保姆;
+59;小天鹅;
+60;伊人;
+61;悠选;
+62;幼蓓;
+63;幼适;
+64;皂牌;
+65;正章;
+66;植护;
+67;滴露;
+68;澳雪;
+69;保宁;
+70;碧莲;
+71;袋鼠妈妈;
+72;丹缇;
+73;得其利是;
+74;格外;
+75;固本增白;
+76;海鸥;
+77;好迪;
+78;好孩子;
+79;好老婆;
+80;荷嫂;
+81;红玫瑰;
+82;红色小象;
+83;金纺（柔顺剂）;
+84;酵丽;
+85;康迪诗;
+86;隆力奇;
+87;妈妈乐;
+88;妈咪优选;
+89;马头;
+90;梦之堂;
+91;纳宇;
+92;青蛙王子;
+93;柔妮;
+94;唐老人;
+95;威白;
+96;威威;
+97;卫新;
+100;一品净;
+101;鹰牌;
+102;奥得美;
+103;妈妈首选;
+104;奇白;
+105;凯儿得乐;
+106;完美;
+107;露伊儿;
+108;朵朵贝尔;
+109;小浣熊;
+110;子初;
+111;蓝贝禾;
+112;青松;
+113;红贝缇;
+114;威品;
+115;五羊(宝宝洗衣液);
+116;兰欣;
+117;欧莉福;
+118;光辉;
+119;幼妙;
+120;巧管家;
+121;金鱼;
+122;金芳;
+123;蓝天（婴儿专用洗衣液）;
+124;黑猫;
+125;激浪;
+126;家政女皇;
+127;亮晶晶;
+128;好蔻;
+129;秋芝;
+130;布朗天使;
+131;五羊;
+132;贝洁;
+133;开尔;
+134;公鸡头;
+135;易极;
+136;佳丽;
+137;菊花;
+138;贝贝熊;
+139;巨能;
+140;净安;
+141;开米;
+142;白鸽;
+143;去渍霸;
+144;超威;
+145;六神;
+146;太太乐;
+147;八四;
+148;全能;
+149;好帮手;
+150;榄菊;
+151;安洁;
+152;双熊猫;
+153;活力28;
+154;泉立方;
+155;芳新;
+156;两面针;
+
+998;以上均不符合;
+999;其它的;
+997;不清楚/不知道/不记得;
+
+
+]
+
+[*set Q='B0']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+
+
+[*data B1R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+12;安利;
+13;传化;
+14;洛娃;
+15;绿伞;
+16;妈妈壹选;
+17;爱护;
+18;芭菲;
+19;贝亲;
+20;船牌;
+21;迪可浓;
+22;笛梵;
+23;芳草;
+24;斧头牌;
+25;乖乖乐;
+26;添富好妈妈;
+27;威猛先生;
+28;好太太;
+29;全职好太太;
+30;惠氏;
+31;加菲猫;
+32;加佳;
+33;家家宜;
+34;家中福;
+35;匠人;
+36;洁宜佳;
+37;光明开尔;
+38;康涤;
+39;康婴健;
+40;浪奇;
+41;绿叶爱生活;
+42;韩汰;
+43;美贰玖;
+44;美乐家;
+45;欧丝宝;
+46;奈斯;
+47;鹏锦;
+48;奇强;
+49;浅语;
+50;强生婴儿;
+51;巧媳妇;
+52;三沐源;
+53;扇牌;
+54;狮王;
+55;双猫;
+56;搜乐;
+57;无限极;
+58;小保姆;
+59;小天鹅;
+60;伊人;
+61;悠选;
+62;幼蓓;
+63;幼适;
+64;皂牌;
+65;正章;
+66;植护;
+67;滴露;
+68;澳雪;
+69;保宁;
+70;碧莲;
+71;袋鼠妈妈;
+72;丹缇;
+73;得其利是;
+74;格外;
+75;固本增白;
+76;海鸥;
+77;好迪;
+78;好孩子;
+79;好老婆;
+80;荷嫂;
+81;红玫瑰;
+82;红色小象;
+83;金纺（柔顺剂）;
+84;酵丽;
+85;康迪诗;
+86;隆力奇;
+87;妈妈乐;
+88;妈咪优选;
+89;马头;
+90;梦之堂;
+91;纳宇;
+92;青蛙王子;
+93;柔妮;
+94;唐老人;
+95;威白;
+96;威威;
+97;卫新;
+100;一品净;
+101;鹰牌;
+102;奥得美;
+103;妈妈首选;
+104;奇白;
+105;凯儿得乐;
+106;完美;
+107;露伊儿;
+108;朵朵贝尔;
+109;小浣熊;
+110;子初;
+111;蓝贝禾;
+112;青松;
+113;红贝缇;
+114;威品;
+115;五羊(宝宝洗衣液);
+116;兰欣;
+117;欧莉福;
+118;光辉;
+119;幼妙;
+120;巧管家;
+121;金鱼;
+122;金芳;
+123;蓝天（婴儿专用洗衣液）;
+124;黑猫;
+125;激浪;
+126;家政女皇;
+127;亮晶晶;
+128;好蔻;
+129;秋芝;
+130;布朗天使;
+131;五羊;
+132;贝洁;
+133;开尔;
+134;公鸡头;
+135;易极;
+136;佳丽;
+137;菊花;
+138;贝贝熊;
+139;巨能;
+140;净安;
+141;开米;
+142;白鸽;
+143;去渍霸;
+144;超威;
+145;六神;
+146;太太乐;
+147;八四;
+148;全能;
+149;好帮手;
+150;榄菊;
+151;安洁;
+152;双熊猫;
+153;活力28;
+154;泉立方;
+155;芳新;
+156;两面针;
+998;以上均不符合;
+999;其它的;
+997;不清楚/不知道/不记得;
+
+
+]
+
+[*set Q='B1']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+
+
+[*data B2R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+999;其他（请填入）;
+998;以上均无<Q><S>;
+]
+
+[*set Q='B2']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+[*data B3R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+999;其他（请填入）;
+998;以上均无;
+]
+
+[*set Q='B3']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **No answer<z><S>
+              **mmmmm<c><s>',
+
+[*data B4R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+999;其他（请填入）;
+998;均不考虑<s>;  
+
+]
+
+[*set Q='B4']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **No answer<z><S>
+              **mmmmm<c><s>',
+
+[*data BS4R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+999;其他（请填入）;
+998;均不考虑<s>;  
+
+]
+
+[*set Q='BS4']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+              
+              
+[*DO A=1:11]              
+[*data B50[a]R(;)=
+10;10(这个牌子在各个方面都很完美)<V10>;
+9 ;9<V9>;
+8 ;8<V8>;
+7 ;7<V7>;
+6 ;6<V6>;
+5 ;5<V5>;
+4 ;4<V4>;
+3 ;3<V3>;
+2 ;2<V2>;
+1 ;1 (这个牌子很差)<V1>; 
+]
+
+[*set Q='B50[a]']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',       
+[*END A]                     
+!!!EQUITY SCORE
+          
+DI $B5,
+[*data B5R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+]
+
+[*set Q='B5']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **No answer<z><s>
+              **mmmmm<c><s>',
+
+
+
+
+
+[*DO A=1:11]              
+[*data TF10[A]R(;)=
+1 ;清洁效果比其它洗衣产品更好 Cleans better than others;
+2 ;能把白衣服洗白 Gives me bright whites;
+3 ;洗后衣服闻起来清新干净 Leaves clothes smelling freshly clean;
+4 ;让衣物保持颜色鲜艳 Keeps colors bright;
+5 ;除菌 Kills germs in the laundry;
+6 ;容易漂洗 Easy Rinse;
+7 ;成分天然 Natural ingredients;
+8 ;采用创新方法来得到最佳洗涤效果 New & innovative ways to get best laundry results;
+9 ;用全自动洗衣机洗衣服,这个品牌能提供超凡洁净 Superior cleaning in automatic washing machines;
+10;物有所值 It is worth the money;
+11;不伤害衣物质地 Do not harm fabric texture;
+
+]
+
+[*set Q='TF10[A]']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',              
+[*END A]  
+
+           
+
+[*data C1R(;)=
+7;汰渍 Tide;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+5;立白 Liby;
+8;好爸爸 Kispa;
+4;雕牌 Diaopai;
+3;超能 Chaoneng;
+6;奥妙 Omo;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;
+999;其他;
+998;以上均无<S>;
+]
+
+[*set Q='C1']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **No answer<z><s>
+              **mmmmm<c><s>',
+              
+              
+              
+[*do A=1:11]           
+[*data C20[A]R(;)=
+1;电视或者电视盒子 TVC ;                                       
+2;视频网站插播广告（如爱奇艺）Ivideo/Pre-roll;                 
+3;网站广告（搜索，门户，BBS）internet ;                        
+4;户外广告（交通工具，外墙屏幕）Outdoor  ;                     
+5;楼宇或电梯视频广告Building LCD   ;                           
+6;店内（陈列，货架，促销）In store (shelf, promotion, display);
+7;社交媒体（如微博，微信）Social  ;                            
+8;电商广告（如淘宝，京东）eCommerce  ;   
+9;报刊杂志 Newspaper<S><Q>;                                                                     
+999;其他;
+]
+
+[*set Q='C20[A]']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',  
+[*END A] 
+
+
+
+
+[*data C3R(;)=
+4 ;$CC3/4; Liby_Natural Soap Liquid-AB couple 15s（11月为Liby_Natural Soap Liquid-AB couple 15s，九月份为LIBY_AB couple life of green & health_15s);
+7 ;$CC3/7; Bluemoon_Zhizun Peng Yuyan_15s;                                                                                                          
+13;$CC3/13;Tide_Tide Ambrosia TVC National;                                                                                                         
+15;$CC3/15;Chaoneng APG washing liquid_Sunli 15s;                                                                                                   
+16;$CC3/16;OMO Have fun not afraid of blot_15s;                                                                                                  
+17;$CC3/17;Kispa with ZYJ2 Movie;                                                                                                                   
+
+
+998;t;都没有看过<z><s> ;
+]
+
+[*set Q='c3']
+[*set x=[[Q]R.#]/3]     
+dm $t[Q]=[*do i=1:x][[Q]R.i*3-1], $[Q]/[[Q]R.i*3-2],[*end i]   
+      r,f,                                                     
+v  $t[Q]='[*do i=1:x]                                          
+                    [[Q]R.i*3]-Base<b>**[[q]r.i*3][*sle]**     
+                 [*end i]                                      
+              **Missing<z>                                     
+              **mmmmm<c><s>',                 
+              
+              
+              
+ 
+[*DO A=1:12] 
+IF $C40[A]/160,DI $C40[A]=999,
+IF $C40[A]/161,DI $C40[A]=997,
+IF $C40[A]/162,DI $C40[A]=998,
+[*END A]           
+           
+               
+[*data C401R(;)=
+7;Correct Linkage;
+7;汰渍 Tide;
+1..6+8..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C401']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+ 
+
+
+[*data C402R(;)=
+8;Correct Linkage;
+8;好爸爸 Kispa;
+
+1..7+9..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C402']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+                        
+   
+[*data C403R(;)=
+3;Correct Linkage;
+3;超能 Chaoneng;
+
+1..2+4..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;               
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C403']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+
+[*data C404R(;)=
+5;Correct Linkage;
+5;立白 Liby;
+1..4+6..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+]
+
+[*set Q='C404']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C405R(;)=
+1;Correct Linkage;
+1;碧浪 Ariel;
+2..996+999;Other brands;
+
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C405']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C406R(;)=
+2;Correct Linkage;
+2;蓝月亮 Blue Moon;
+1+3..996+999;Other brands;
+1;碧浪 Ariel;
+
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C406']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C407R(;)=
+2;Correct Linkage;
+2;蓝月亮 Blue Moon;
+1+3..996+999;Other brands;
+1;碧浪 Ariel;
+
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+
+]
+
+[*set Q='C407']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C408R(;)=
+1;Correct Linkage;
+1;碧浪 Ariel;
+2..996+999;Other brands;
+
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C408']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C409R(;)=
+7;Correct Linkage;
+7;汰渍 Tide;
+1..6+8..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C409']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C4010R(;)=
+6;Correct Linkage;
+6;奥妙 Omo;
+1..5+7..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C4010']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C4011R(;)=
+2;Correct Linkage;
+2;蓝月亮 Blue Moon;
+1+3..996+999;Other brands;
+1;碧浪 Ariel;
+
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C4011']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data C4012R(;)=
+2;Correct Linkage;
+2;蓝月亮 Blue Moon;
+1+3..996+999;Other brands;
+1;碧浪 Ariel;
+
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C4012']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+[*data C4013R(;)=
+7;Correct Linkage;
+7;汰渍 Tide;
+1..6+8..996+999;Other brands;
+
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C4013']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+              
+[*data C4014R(;)=
+1;Correct Linkage;
+1;碧浪 Ariel;
+2..996+999;Other brands;
+
+2;蓝月亮 Blue Moon;
+3;超能 Chaoneng;
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C4014']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+[*data C4015R(;)=
+3;Correct Linkage;
+3;超能 Chaoneng;
+1+2+4..996+999;Other brands;
+1;碧浪 Ariel;
+2;蓝月亮 Blue Moon;
+
+4;雕牌 Diaopai;
+5;立白 Liby;
+6;奥妙 Omo;
+7;汰渍 Tide;
+8;好爸爸 Kispa;
+9;洁霸 Attack;
+10;威露士Walch;
+11;白猫 Baimao;              
+ 
+12..996+999;其他;               
+              
+998;以上均不符合<s>;                    
+997;不清楚/不知道/不记得;
+
+]
+
+[*set Q='C4015']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+![*data C4016R(;)=
+!6;Correct Linkage;
+!6;奥妙 Omo;
+!1..5+7..996+999;Other brands;
+!1;碧浪 Ariel;
+!2;蓝月亮 Blue Moon;
+!3;超能 Chaoneng;
+!4;雕牌 Diaopai;
+!5;立白 Liby;
+!
+!7;汰渍 Tide;
+!8;好爸爸 Kispa;
+!9;洁霸 Attack;
+!10;威露士Walch;
+!11;白猫 Baimao;              
+! 
+!12..996+999;其他;               
+!              
+!998;以上均不符合<s>;                    
+!997;不清楚/不知道/不记得;
+!
+!]
+!
+![*set Q='C4016']
+!dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+!      r,f,
+!v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+!                      [[Q]R.i*2] [*sle]**
+!                 [*end i]
+!              **Missing<z><S>
+!              **mmmmm<c><s>',
+!              
+![*data C4017R(;)=
+!8;Correct Linkage;
+!8;好爸爸 Kispa;
+!1..7+9..996+999;Other brands;
+!1;碧浪 Ariel;
+!2;蓝月亮 Blue Moon;
+!3;超能 Chaoneng;
+!4;雕牌 Diaopai;
+!5;立白 Liby;
+!6;奥妙 Omo;
+!7;汰渍 Tide;
+!
+!9;洁霸 Attack;
+!10;威露士Walch;
+!11;白猫 Baimao;              
+! 
+!12..996+999;其他;               
+!              
+!998;以上均不符合<s>;                    
+!997;不清楚/不知道/不记得;
+!
+!]
+!
+![*set Q='C4017']
+!dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+!      r,f,
+!v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+!                      [[Q]R.i*2] [*sle]**
+!                 [*end i]
+!              **Missing<z><S>
+!              **mmmmm<c><s>',
+
+
+
+
+
+[*data C5R(;)=
+1;护色;        
+2;除菌;        
+3;天然;        
+998;以上均不符合 ; 
+
+]
+[*set Q='C5']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+
+[*data C6R(;)=
+1;护色;
+2;除菌;
+3;天然;
+998;以上均不符合;
+
+]
+
+[*set Q='C6']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+              
+
+[*data C7R(;)=
+1;三合一;
+2;除菌;
+3;天然;
+998;以上均不符合;
+
+
+]
+
+[*set Q='C7']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+
+[*data C8R(;)=
+1;三合一;
+2;除菌;
+3;天然;
+998;以上均不符合;
+
+
+]
+
+[*set Q='C8']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+                         
+              
+[*data D1R(;)=
+1;是;
+2;不是;
+]
+
+[*set Q='D1']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><S>
+              **mmmmm<c><s>',
+
+
+[*data CH1R(;)=
+1;有;
+2;没有;
+
+]
+
+[*set Q='CH1']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+              
+[*data CH2R(;)=
+1;方太洗碗机;
+2;碧浪洗衣液;
+3;OPPO拍照手机;
+4;伊利金典牛奶;
+998;以上均没有;
+
+]
+
+[*set Q='CH2']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+
+IF $CH3/4,DI $CH3=998,
+[*data CH3R(;)=
+1;抑菌;
+2;护色;
+3;天然;
+998;以上均没有;
+
+]
+
+[*set Q='CH3']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+
+!!!逻辑很乱，隐藏空值
+[*data CH4R(;)=
+1;Tide Ambrosia  汰渍三色球;
+2;Ariel Ambrosia  碧浪三色球;
+3;Ariel Genesis   碧浪洗衣凝珠;
+4;Bold SUD         BOLD洗衣凝珠;
+5;CN SUD         超能洗衣凝珠;
+6;OMO SUD     奥妙洗衣凝珠 ;
+7;Weixin SUD(卫新）   卫新洗衣凝珠;
+8;La Mama SUD（妈妈壹选)       妈妈壹选洗衣凝珠;
+999;其他（请填入）;
+998;不认识任何洗衣凝珠产品;
+
+
+]
+
+[*set Q='CH4']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+              
+[*data CH5R(;)=
+1;Tide Ambrosia   汰渍三色球;
+2;Ariel Ambrosia   碧浪三色球;
+3;Ariel Genesis     碧浪洗衣凝珠;
+4;Bold SUD          BOLD洗衣凝珠;
+5;CN SUD            超能洗衣凝珠;
+6;OMO SUD         奥妙洗衣凝珠 ;
+7;Weixin SUD(卫新）   卫新洗衣凝珠;
+8;La Mama SUD（妈妈壹选)       妈妈壹选洗衣凝珠;
+999;其他（请填入）;
+998;没有使用任何洗衣凝珠;
+
+
+]
+
+[*set Q='CH5']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+              
+[*data CH6R(;)=
+1;三合一;
+2;洁净;
+3;护色;
+4;护衣;
+5;柔顺;
+6;抑菌;
+7;清新;
+8;亮白;
+9;天然;
+10;方便;
+998;以上均没有;
+
+
+]
+
+[*set Q='CH6']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+              
+[*data CH7R(;)=
+1;三合一;
+2;洁净;
+3;护色;
+4;护衣;
+5;柔顺;
+6;抑菌;
+7;清新;
+8;亮白;
+9;天然;
+10;方便;
+998;以上均没有;
+
+
+]
+
+[*set Q='CH7']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+              
+[*data CH8R(;)=
+1;商店没有售卖;
+2;不知道怎么使用;
+3;太贵/不划算;
+4;不相信产品功效;
+5;不能控制洗衣产品用量;
+6;不喜欢产品香味;
+7;担心洗不干净衣物;
+8;担心伤害衣物质地;
+9;担心令衣物掉/褪色;
+10;担心产品难溶解;
+11;担心有残留;
+12;买了其他品牌的凝珠;
+999;其他（请填入）;
+
+
+]
+
+[*set Q='CH8']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+              
+[*data CH9R(;)=
+1;商店没有售卖;
+2;不知道怎么使用;
+3;太贵/不划算;
+4;不相信产品功效;
+5;不能控制洗衣产品用量;
+6;不喜欢产品香味;
+7;担心洗不干净衣物;
+8;担心伤害衣物质地;
+9;担心令衣物掉/褪色;
+10;担心产品难溶解;
+11;担心有残留;
+12;买了其他品牌的凝珠;
+999;其他（请填入）;
+
+
+]
+
+[*set Q='CH9']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z><s>
+              **mmmmm<c><s>',
+              
+
+
+
+
+
+
+
+
+
+
+[*data cm(;)=
+1 ;a2;
+2 ;b1;
+3 ;b2;
+4 ;b3;
+5 ;b4;
+6 ;bs4;
+7 ;c1;
+8 ;c201 ;
+9 ;c202 ;
+10;c203 ;
+11;c204 ;
+12;c205 ;            
+13;c206 ;
+14;c207 ;
+15;c208 ;
+16;c209 ;
+17;c2010;
+18;c2011;
+20;c5;
+21;c6;
+
+35;ch2;
+36;ch4;  
+37;ch5;
+38;ch6;
+39;ch7;
+40;ch8;
+41;ch9;
+]
+[*do a=1:[cm.#]/2]
+di $ct[cm.a*2]=ct($[cm.a*2]),
+[*end a]
+
+!!!只计算当期广告的均值
+if $c3/3+4+13+14+15,di $ctc3=ct($c3),
+
+!!!不知道为什么算出来和下面对不上
+[*do a=1:11]
+if ($tf10[a]/1..11),DI $CTTF10[A]=ct($tf10[a]),
+[*end a]
+
+
+[*do a=1:11]        
+   dm $ceqa[a](99),
+[*end a] 
+
+[*do a=1:11]
+[*do b=1:11]
+if ct($tf10[a])/[b],m $ceqa[a]/[b],
+[*end b]
+[*end a]
+
+[*do a=1:11]
+[*data ceqa[a]R(;)=
+1 ;1 <v1 >;
+2 ;2 <v2 >;
+3 ;3 <v3 >;
+4 ;4 <v4 >;
+5 ;5 <v5 >;
+6 ;6 <v6 >;
+7 ;7 <v7 >;
+8 ;8 <v8 >;
+9 ;9 <v9 >;
+10;10<v10>;
+11;11<v11>;
+
+
+]
+
+[*set Q='ceqa[a]']
+dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
+      r,f,
+v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
+                      [[Q]R.i*2] [*sle]**
+                 [*end i]
+              **Missing<z>
+              **mmmmm<c><s>',
+[*end a]              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

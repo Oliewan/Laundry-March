@@ -1,0 +1,412 @@
+
+VT $TB0='【TOMA】',
+VT $TB1='【UBA】',
+VT $TB2='【ABA】',
+VT $TB3='【P3M】',
+VT $TB4='(B4) B4.CONSIDERATION：如果买不到上述品牌，你会考虑替代的品牌是？Assume any other brands you are to purchase as a substitute  if your most frequent-buying brand is out of stock. (Multiple-answer question/ Open Question)',   
+VT $TBS4='【CONSIDERATION SET】',			
+VT $TC1='(C1) CAA：最近您看过以下哪些品牌的广告或产品信息？（包括视频广告，户外，店内等）（可多选）',
+
+VT $TC201='【SOA - 碧浪 Ariel】',
+VT $TC202 ='【SOA - 蓝月亮 Blue Moon】',
+VT $TC203 ='【SOA - 超能 Chaoneng】',
+VT $TC204 ='【SOA - 雕牌 Diaopai】',
+VT $TC205 ='【SOA - 立白 Liby】',
+VT $TC206 ='【SOA - 奥妙 Omo】',
+VT $TC207 ='【SOA - 汰渍 Tide】',
+VT $TC208 ='【SOA - 好爸爸 Kispa】',
+VT $TC209 ='【SOA - 洁霸 Attack】',
+VT $TC2010='【SOA - 威露士Walch】',
+VT $TC2011='【SOA - 白猫 Baimao】',
+
+VT $TC3='(C3) Copy Awareness (4 copies)：（出示广告图片）请点选你最近看过的广告（可多选）。请下拉页面看到所有广告。',
+[*DO A=1:12]
+VT $TC40[A]='(C40[A])C4.Copy Brand linkage (Open-end)：这是哪个品牌的广告？（开放题）',
+[*END A]
+
+VT $TC5='(C5) C5.Tide Color广告传达的主要产品功效是？',
+VT $TC6='(C6) C6.Ariel Neptune Liutao 15s video广告传达的主要产品功效是？',
+                                                                                                                               
+VT $TTF101 ='(F101 ) F101 .Equity attribute-碧浪 Ariel',
+VT $TTF102 ='(F102 ) F102 .Equity attribute-蓝月亮 Blue Moon',
+VT $TTF103 ='(F103 ) F103 .Equity attribute-超能 Chaoneng',
+VT $TTF104 ='(F104 ) F104 .Equity attribute-雕牌 Diaopai',
+VT $TTF105 ='(F105 ) F105 .Equity attribute-立白 Liby',
+VT $TTF106 ='(F106 ) F106 .Equity attribute-奥妙 Omo',
+VT $TTF107 ='(F107 ) F107 .Equity attribute-汰渍 Tide',
+VT $TTF108 ='(F108 ) F108 .Equity attribute-好爸爸 Kispa',
+VT $TTF109 ='(F109 ) F109 .Equity attribute-洁霸 Attack',
+VT $TTF1010='(F1010) F1010.Equity attribute-威露士Walch',
+VT $TTF1011='(F1011) F1011.Equity attribute-白猫 Baimao',
+
+VT $TD1='(D1) D1.（针对A1选择18-24岁人士）请问您是在校大学生吗？',
+VT $TCH1='(H1) H1.您是否有看过节目《亲爱的客栈》呢？		',
+VT $TCH2='(H2) H2.您在《亲爱的客栈》节目中看到过以下哪些品牌的产品？（多选）		',
+VT $TCH3='(H3) H3.你最记得碧浪洗衣液的什么特点？（单选）	',
+VT $TSE1 ='【SOA Effectiveness - 碧浪 Ariel】',
+VT $TSE2 ='【SOA Effectiveness - 蓝月亮 Blue Moon】',
+VT $TSE3 ='【SOA Effectiveness - 超能 Chaoneng】',
+VT $TSE4 ='【SOA Effectiveness - 雕牌 Diaopai】',
+VT $TSE5 ='【SOA Effectiveness - 立白 Liby】',
+VT $TSE6 ='【SOA Effectiveness - 奥妙 Omo】',
+VT $TSE7 ='【SOA Effectiveness - 汰渍Tide】',
+VT $TSE8 ='【SOA Effectiveness - 好爸爸 Kispa】',
+VT $TSE9 ='【SOA Effectiveness - 洁霸 Attack】',
+VT $TSE10='【SOA Effectiveness - 威露士 Walch】',
+VT $TSE11='【SOA Effectiveness - 白猫 Baimao Baimao】',
+
+!!HEADER1
+dm x $h1=
+$w/1..4    :"1st half***([~1])",
+$w/1       :"National***Aug*([~1])",
+$W/2       :"Sep*([~2])",
+$W/3       :"Nov*([~3])",
+$W/4       :"Jan*([~4])",
+$W/5       :"March*([~5])",
+
+$Region/4.($w/1..4)  :"1st half-North***([~1])",
+$Region/4.$w/1       :"North***Aug*([~1])",
+$Region/4.$W/2       :"Sep*([~2])",
+$Region/4.$W/3       :"Nov*([~3])",
+$Region/4.$W/4       :"Jan*([~4])",
+$Region/4.$W/5       :"March*([~5])",
+xt $h1="Total wave",
+
+
+dm x $h2=
+$w/1.$M/2.$C3/9.$C409/7 :"Tide Complete_15s【Aug】***汰渍 Tide*([~1])",
+$w/1.$M/2.$C3/n9         :"没看过*([~2])", 
+
+$W/2.$M/2.$C3/1.$C401/7 :"TD1069_Tide Neptune Color TVC 15s【Sep】***汰渍 Tide*([~1])",
+$W/2.$M/2.$CC3/1.$C3/N1   :"没看过*([~2])",  
+
+$W/3.$M/2.$C3/1.$C401/7 :"TD1069_Tide Neptune Color TVC 15s【Nov】***汰渍 Tide*([~1])",
+$W/3.$M/2.$CC3/1.$C3/N1   :"没看过*([~2])",   
+
+
+$W/4.$M/2.$C3/13.$C4013/7 :"Tide_Tide Ambrosia TVC National【Jan】***汰渍 Tide*([~1])",
+$W/4.$M/2.$CC3/13.$C3/N13   :"没看过*([~2])",   
+
+$W/5.$M/2.$C3/13.$C4013/7  :"Tide_Tide Ambrosia TVC National【March】***汰渍 Tide*([~1])", 
+$W/5.$M/2.$CC3/13.$C3/N13   :"没看过*([~2])",    
+
+
+
+xt $h2="汰渍广告 ",
+
+
+
+
+
+
+dm x $h3=
+$w/1.$M/2.$C3/8.$C408/1 :"Ariel Matic W2 EZR (Nat Ver2) 15s【Aug】***碧浪 Ariel*([~1])",
+$w/1.$M/2.$C3/n8         :"没看过*([~2])",  
+
+
+$W/3.$M/2.$C3/5.$C405/1 :"Ariel Neptune Liutao 15s video【Nov】***碧浪 Ariel*([~1])",
+$W/3.$M/2.$CC3/5.$C3/N5   :"没看过*([~2])",   
+
+
+$W/4.$M/2.$C3/14.$C4014/1 :"ARIEL_AE443_NEP_15S_National【Jan】***碧浪 Ariel*([~1])",
+$W/4.$M/2.$CC3/14.$C3/N14   :"没看过*([~2])",   
+ 
+
+xt $h3="碧浪广告 ",
+
+
+
+dm x $h4=
+
+$W/4       :"Rolling wave***Jan*([~1])",
+$W/5       :"March*([~2])",
+
+xt $h4="Rolling wave",
+
+
+
+
+
+
+
+
+dm x $h5=
+
+$w/1.$M/2.$C3/9.$C409/7 :"Tide Complete_15s***Aug*([~1])",
+$W/2.$M/2.$C3/9.$C409/7 :"Sep*([~2])",
+$W/3.$M/2.$C3/9.$C409/7 :"Nov*([~3])",
+$W/4.$M/2.$C3/9.$C409/7 :"Jan*([~4])",
+$W/5.$M/2.$C3/9.$C409/7 :"March*([~5])",
+
+$w/1.$M/2.$C3/1.$C401/7 :"TD1069_Tide Neptune Color TVC 15s***Aug*([~1])",
+$W/2.$M/2.$C3/1.$C401/7 :"Sep*([~2])",
+$W/3.$M/2.$C3/1.$C401/7 :"Nov*([~3])",
+$W/4.$M/2.$C3/1.$C401/7 :"Jan*([~4])",
+$W/5.$M/2.$C3/1.$C401/7 :"March*([~5])",
+
+$w/1.$M/2.$C3/13.$C4013/7 :"Tide_Tide Ambrosia TVC National***Aug*([~1])",
+$W/2.$M/2.$C3/13.$C4013/7 :"Sep*([~2])",
+$W/3.$M/2.$C3/13.$C4013/7 :"Nov*([~3])",
+$W/4.$M/2.$C3/13.$C4013/7 :"Jan*([~4])",
+$W/5.$M/2.$C3/13.$C4013/7 :"March*([~5])",
+
+
+
+$w/1.$M/2.$C3/8.$C408/1 :"Ariel_Ariel Matic W2 EZR (Nat Ver2) 15s***Aug*([~1])",
+$W/2.$M/2.$C3/8.$C408/1 :"Sep*([~2])",
+$W/3.$M/2.$C3/8.$C408/1 :"Jan*([~3])",
+$W/4.$M/2.$C3/8.$C408/1 :"Nov*([~4])",
+$W/5.$M/2.$C3/8.$C408/1 :"March*([~5])",
+
+$w/1.$M/2.$C3/5.$C405/1:"Ariel Neptune Liutao 15s video***Aug*([~1])",
+$W/2.$M/2.$C3/5.$C405/1 :"Sep*([~2])",
+$W/3.$M/2.$C3/5.$C405/1 :"Nov*([~3])",
+$W/4.$M/2.$C3/5.$C405/1 :"Jan*([~4])",
+$W/5.$M/2.$C3/5.$C405/1 :"March*([~5])",
+
+$w/1.$M/2.$C3/14.$C4014/1:"ARIEL_AE443_NEP_15S_National***Aug*([~1])",
+$W/2.$M/2.$C3/14.$C4014/1 :"Sep*([~2])",
+$W/3.$M/2.$C3/14.$C4014/1 :"Nov*([~3])",
+$W/4.$M/2.$C3/14.$C4014/1 :"Jan*([~4])",
+$W/5.$M/2.$C3/14.$C4014/1 :"March*([~5])",
+
+xt $h5="Addhoc ",
+
+dm x $h6=
+$W/5    :"Wave***Current Wave-March*([~1])",
+$W/4    :"Last Wave-Jan*([~2])",
+  
+
+xt $h6="SOA", 
+
+dm x $h7=
+$REGION/4.$W/5    :"Wave***Current Wave-North-March*([~1])",
+$REGION/4.$W/4    :"Last Wave-North-Jan*([~2])",
+  
+
+xt $h7="SOA-North",
+
+dm x $h8=
+t    :"TOMA***Jan*([~1])",
+t    :"March*([~2])",
+t    :"UBA***Jan*([~1])",
+t    :"March*([~2])",
+t    :"Consideration Set***Jan*([~1])",
+t    :"March*([~2])",
+t    :"P3M Purchase***Jan*([~1])",
+t    :"March*([~2])",
+xt $h8="Breakout ",  
+ 
+ 
+ 
+
+ 
+ 
+dm x $h9=
+t       :"Summary-Attribute***汰渍",      
+t       :"碧浪",       
+t       :"蓝月亮",      
+t       :"立白",      
+t       :"好爸爸",      
+t       :"雕牌",       
+t       :"超能",
+t       :"奥妙",    
+t       :"洁霸",  
+t       :"威露士",      
+t       :"白猫",
+
+xt $h9="Summary-Attribute",  
+ 
+
+dm x $h10=
+$W/5.($C207/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C207/1)        :"TV",
+$W/5.($C207/2+3+7+8)  :"Digital",
+$W/5.($C207/6)        :"In-store",
+$W/5.($C207/4+5)      :"Outdoor",
+
+$W/4.($C207/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C207/1)        :"TV",
+$W/4.($C207/2+3+7+8)  :"Digital",
+$W/4.($C207/6)        :"In-store",
+$W/4.($C207/4+5)      :"Outdoor",
+xt $h10="SOA Effectiveness ",  
+
+
+dm x $h11=
+$W/5.($C201/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C201/1)        :"TV",
+$W/5.($C201/2+3+7+8)  :"Digital",
+$W/5.($C201/6)        :"In-store",
+$W/5.($C201/4+5)      :"Outdoor",
+
+$W/4.($C201/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C201/1)        :"TV",
+$W/4.($C201/2+3+7+8)  :"Digital",
+$W/4.($C201/6)        :"In-store",
+$W/4.($C201/4+5)      :"Outdoor",
+xt $h11="SOA Effectiveness ",  
+
+dm x $h12=
+$W/5.($C202/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C202/1)        :"TV",
+$W/5.($C202/2+3+7+8)  :"Digital",
+$W/5.($C202/6)        :"In-store",
+$W/5.($C202/4+5)      :"Outdoor",
+
+$W/4.($C202/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C202/1)        :"TV",
+$W/4.($C202/2+3+7+8)  :"Digital",
+$W/4.($C202/6)        :"In-store",
+$W/4.($C202/4+5)      :"Outdoor",
+xt $h12="SOA Effectiveness ",  
+
+
+dm x $h13=
+$W/5.($C205/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C205/1)        :"TV",
+$W/5.($C205/2+3+7+8)  :"Digital",
+$W/5.($C205/6)        :"In-store",
+$W/5.($C205/4+5)      :"Outdoor",
+
+$W/4.($C205/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C205/1)        :"TV",
+$W/4.($C205/2+3+7+8)  :"Digital",
+$W/4.($C205/6)        :"In-store",
+$W/4.($C205/4+5)      :"Outdoor",
+xt $h13="SOA Effectiveness ",  
+
+
+dm x $h14=
+$W/5.($C208/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C208/1)        :"TV",
+$W/5.($C208/2+3+7+8)  :"Digital",
+$W/5.($C208/6)        :"In-store",
+$W/5.($C208/4+5)      :"Outdoor",
+
+$W/4.($C208/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C208/1)        :"TV",
+$W/4.($C208/2+3+7+8)  :"Digital",
+$W/4.($C208/6)        :"In-store",
+$W/4.($C208/4+5)      :"Outdoor",
+xt $h14="SOA Effectiveness ",  
+
+
+dm x $h15=
+$W/5.($C204/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C204/1)        :"TV",
+$W/5.($C204/2+3+7+8)  :"Digital",
+$W/5.($C204/6)        :"In-store",
+$W/5.($C204/4+5)      :"Outdoor",
+
+$W/4.($C204/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C204/1)        :"TV",
+$W/4.($C204/2+3+7+8)  :"Digital",
+$W/4.($C204/6)        :"In-store",
+$W/4.($C204/4+5)      :"Outdoor",
+xt $h15="SOA Effectiveness ",  
+
+
+dm x $h16=
+$W/5.($C203/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C203/1)        :"TV",
+$W/5.($C203/2+3+7+8)  :"Digital",
+$W/5.($C203/6)        :"In-store",
+$W/5.($C203/4+5)      :"Outdoor",
+
+$W/4.($C203/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C203/1)        :"TV",
+$W/4.($C203/2+3+7+8)  :"Digital",
+$W/4.($C203/6)        :"In-store",
+$W/4.($C203/4+5)      :"Outdoor",
+xt $h16="SOA Effectiveness ",  
+
+
+dm x $h17=
+$W/5.($C206/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C206/1)        :"TV",
+$W/5.($C206/2+3+7+8)  :"Digital",
+$W/5.($C206/6)        :"In-store",
+$W/5.($C206/4+5)      :"Outdoor",
+
+$W/4.($C206/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C206/1)        :"TV",
+$W/4.($C206/2+3+7+8)  :"Digital",
+$W/4.($C206/6)        :"In-store",
+$W/4.($C206/4+5)      :"Outdoor",
+xt $h17="SOA Effectiveness ",  
+
+
+dm x $h18=
+$W/5.($C209/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C209/1)        :"TV",
+$W/5.($C209/2+3+7+8)  :"Digital",
+$W/5.($C209/6)        :"In-store",
+$W/5.($C209/4+5)      :"Outdoor",
+
+$W/4.($C209/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C209/1)        :"TV",
+$W/4.($C209/2+3+7+8)  :"Digital",
+$W/4.($C209/6)        :"In-store",
+$W/4.($C209/4+5)      :"Outdoor",
+xt $h18="SOA Effectiveness ",  
+
+
+dm x $h19=
+$W/5.($C2010/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C2010/1)        :"TV",
+$W/5.($C2010/2+3+7+8)  :"Digital",
+$W/5.($C2010/6)        :"In-store",
+$W/5.($C2010/4+5)      :"Outdoor",
+
+$W/4.($C2010/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C2010/1)        :"TV",
+$W/4.($C2010/2+3+7+8)  :"Digital",
+$W/4.($C2010/6)        :"In-store",
+$W/4.($C2010/4+5)      :"Outdoor",
+xt $h19="SOA Effectiveness ",  
+
+
+dm x $h20=
+$W/5.($C2011/1..8)    :"Curent wave***All Vehicle<B>",
+$W/5.($C2011/1)        :"TV",
+$W/5.($C2011/2+3+7+8)  :"Digital",
+$W/5.($C2011/6)        :"In-store",
+$W/5.($C2011/4+5)      :"Outdoor",
+
+$W/4.($C2011/1..8)    :"Last wave***All Vehicle<B>",
+$W/4.($C2011/1)        :"TV",
+$W/4.($C2011/2+3+7+8)  :"Digital",
+$W/4.($C2011/6)        :"In-store",
+$W/4.($C2011/4+5)      :"Outdoor",
+xt $h20="SOA Effectiveness ",  
+
+
+dm x $h21=
+t    :"Tide***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :" Ariel***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Blue Moon***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Liby***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Kispa***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Diaopai***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Chaoneng***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Omo***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Attack***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Walch***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+t    :"Baimao***Curent wave*([~1])",
+t    :"Last wave*([~2])",
+xt $h21="SOA",  
+
+
+
+
