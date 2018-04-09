@@ -1,7 +1,7 @@
   
 = ----- 2015/2/1 星期日 下午 15:57:38
 = MRDCL version 2011.1 Startup
-= E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\table-1\table.stp
+= E:\QD\my project\Laundry\March\table-1\table.stp
 = Copyright 1990 - 2009 MRDC Software, Kent, England
   CEP
   CSV 2002 style
@@ -11,9 +11,9 @@
   TIDY
   C(A)<listdata>=..\DDM\DATA.CSV
   C(A)=..\ddm\Laundry-TW1.DAT
-  C(A)=..\ddm\TEST-M1.DAT
-  C(A)=..\ddm\TEST-M2.DAT
-  OUTPUT=..\OUTPUT\LAUNDRY#1-V5.TAB
+  C(A)=..\ddm\Laundry-W5-M1.DAT
+  C(A)=..\ddm\Laundry-W5-M2.DAT
+  OUTPUT=..\OUTPUT\LAUNDRY#1-0403-V1.TAB
   CHARSET=DOUBLE
 = MRDCL version 2011.1 startup completed
   
@@ -30,47 +30,28 @@
   CSV file column 2 used to set $W
   CSV file column 3 used to set $M
   Now opening file (A) number 2
-  E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\ddm\Laundry-TW1.DAT
+  E:\QD\my project\Laundry\March\ddm\Laundry-TW1.DAT
   Now opening file (A) number 3
-  E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\ddm\TEST-M1.DAT
->>MRDCL 2011.1 Question number 0401
->>A faulty serial number has been found in the data file.  Do you wish to see this error message again?
+  E:\QD\my project\Laundry\March\ddm\Laundry-W5-M1.DAT
   Now opening file (A) number 4
-  E:\快决测\我的项目\Laundry\March【与Jan的V5版一致】\ddm\TEST-M2.DAT
-=  Data lines read 12843
-=  Records 12843
-  Number of times reached finish data 12843
-  Write commands rejected 11619
-  Write commands accepted 1224
-  IDF records 1224
+  E:\QD\my project\Laundry\March\ddm\Laundry-W5-M2.DAT
+=  Data lines read 15766
+=  Records 15766
+  Number of times reached finish data 15766
+  Write commands rejected 12351
+  Write commands accepted 3415
+  IDF records 3415
 = Stage 2 (tables)
-  Records to be read 1224
+  Records to be read 3415
   Passes needed 1
 = MRDCL execution phase completed
   
 = ----- 2015/2/1 星期日 下午 15:57:38
 = MRDCL print phase startup
-  Table #SEAN output as SEAN
->>Table #SEAN output as SEAN
-  M00818 A table is empty.  Do you wish to see this message if the problem occurs again?
-  Table #C4013BE1 output as C4013BE1
-  Table #C4014BF1 output as C4014BF1
-  Table #C4015BG1 output as C4015BG1
-  Table #C407AE1 output as C407AE1
-  Table #C7BJ1 output as C7BJ1
-  Table #C8BK1 output as C8BK1
-  Table #D1B1 output as D1B1
-  Table #CH4BI1 output as CH4BI1
-  Table #CH5BP1 output as CH5BP1
-  Table #CH6BL1 output as CH6BL1
-  Table #CH7BM1 output as CH7BM1
-  Table #CH8BN1 output as CH8BN1
-  Table #CH9BO1 output as CH9BO1
-  Table #ORI output as ORI
 = MRDCL print phase completed
 = CL run completed
-  Data lines read 12843
-  IDF data records 1224
-  Table pages 95
+  Data lines read 15766
+  IDF data records 3415
+  Table pages 96
   
 = ----- 2015/2/1 星期日 下午 15:57:38

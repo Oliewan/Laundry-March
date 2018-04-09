@@ -1,3 +1,13 @@
+IF $W/5.$Aa1/2,DI $A1=1,
+IF $W/5.$Aa1/3,DI $A1=2,
+IF $W/5.$Aa1/4,DI $A1=3,
+IF $W/5.$Aa1/5,DI $A1=4,
+
+IF $W/5.($A4/1+5+9+13+17+21+25), DI $A4=1,
+IF $W/5.($A4/2+6+10+14+18+22+26),DI $A4=2,
+IF $W/5.($A4/3+7+11+15+19+23+27),DI $A4=3,
+IF $W/5.($A4/4+8+12+16+20+24+28),DI $A4=4,
+
 [*data CTR(;)=
 
 1;TOP 4 ;
@@ -36,49 +46,7 @@ v  $t[Q]='[*do i=1:[[Q]R.#]/2]
               **mmmmm<c><S>',
               
 
-IF $CITY/1,di $PROVINCE=23,  
-IF $CITY/2,di $PROVINCE=24,
-IF $CITY/3,di $PROVINCE=25,
-IF $CITY/4,di $PROVINCE=26,
-
-
-
-
-
-[*data PROVINCER(;)=
-23;北京;  
-24;上海;
-25;广州;
-26;成都;
-
-1;河南;
-2;江苏;
-3;浙江;
-4;河北;
-5;黑龙江;
-6;辽宁;
-7;山东;
-8;天津;
-9;福建;
-10;广东;
-11;湖北;
-12;湖南;
-13;陕西;
-14;云南;
-15;重庆;
-16;四川;
-
-
-]
-
-[*set Q='PROVINCE']
-dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
-      r,f,
-v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
-                      [[Q]R.i*2] [*sle]**
-                 [*end i]
-              **Missing<z><S>
-              **mmmmm<c><S>',              
+            
 
               
 [*data A1R(;)=
@@ -154,9 +122,8 @@ v  $t[Q]='[*do i=1:[[Q]R.#]/2]
 
 
 !!!UBA首次提及当成TOMA
-IF $B0/160,DI $B0=999,
-IF $B0/161,DI $B0=997,
-IF $B0/162,DI $B0=998,
+IF $W/5,DI $B0=$B101,
+
 [*data B0R(;)=
 7;汰渍 Tide;
 1;碧浪 Ariel;
@@ -544,7 +511,7 @@ v  $t[Q]='[*do i=1:[[Q]R.#]/2]
               **mmmmm<c><s>',
 
 DM $QQ6(99),
-[*DO A=1:15]
+[*DO A=1:17]
 IF $cc3/[A],M $QQ6/[A*4-3],
 IF $c3/[A],M $QQ6/[A*4-2], 
 IF $c3/[A],M $QQ6/[A*4-1],
@@ -565,51 +532,64 @@ IF $C4012/2,M $QQ6/48,
 IF $C4013/7,M $QQ6/52,
 IF $C4014/1,M $QQ6/56,
 IF $C4015/3,M $QQ6/60,
+IF $C4016/6,M $QQ6/64,
+IF $C4017/8,M $QQ6/68,
 [*data QQ6R(;)=
 1;TD1069_Tide Neptune Color TVC 15s<B>;
 2;Copy Aware;
 3; Aware Copy Base Size:<B>;
 4;Brand Linkage(Among aware);
+
 5;Kispa Huanglei babysiting_15s<B>;
 6;Copy Aware;
 7; Aware Copy Base Size:<B>;
 8;Brand Linkage(Among aware);
+
 9;Chaoneng Stylish Superwoman_Sunli 30s <B>;
 10;Copy Aware;
 11; Aware Copy Base Size:<B>;
 12;Brand Linkage(Among aware);
+
 13;Liby_Natural Soap Liquid-AB couple 15s<B>;
 14;Copy Aware;
 15; Aware Copy Base Size:<B>;
 16;Brand Linkage(Among aware);
+
 17;Ariel Neptune Liutao 15s video<B>;
 18;Copy Aware;
 19; Aware Copy Base Size:<B>;
 20;Brand Linkage(Among aware);
+
 21;Bluemoon_Zhizun Liu Wen_15s<B>;
 22;Copy Aware;
 23; Aware Copy Base Size:<B>;
 24;Brand Linkage(Among aware);
+
 25;Bluemoon_Zhizun Peng Yuyan_15s<B>;
 26;Copy Aware;
 27; Aware Copy Base Size:<B>;
 28;Brand Linkage(Among aware);
+
 29;Ariel_Ariel Matic W2 EZR (Nat Ver2) 15s<B>;
 30;Copy Aware;
 31; Aware Copy Base Size:<B>;
 32;Brand Linkage(Among aware);
+
 33;Tide Complete_15s<B>;
 34;Copy Aware;
 35; Aware Copy Base Size:<B>;
 36;Brand Linkage(Among aware);
+
 37;OMO-Live in omo life-15s<B>;
 38;Copy Aware;
 39; Aware Copy Base Size:<B>;
 40;Brand Linkage(Among aware);
+
 41;Bluemoon Liuwen-30s<B>;
 42;Copy Aware;
 43; Aware Copy Base Size:<B>;
 44;Brand Linkage(Among aware);
+
 45;Bluemoon Peng Yuyan_30s<B>;
 46;Copy Aware;
 47; Aware Copy Base Size:<B>;
@@ -619,16 +599,26 @@ IF $C4015/3,M $QQ6/60,
 50;Copy Aware;
 51; Aware Copy Base Size:<B>;
 52;Brand Linkage(Among aware);
+
 53;ARIEL_AE443_NEP_15S_National<B>;
 54;Copy Aware;
 55; Aware Copy Base Size:<B>;
 56;Brand Linkage(Among aware);
+
 57;Chaoneng APG washing liquid_Sunli 15s<B>;
 58;Copy Aware;
 59; Aware Copy Base Size:<B>;
 60;Brand Linkage(Among aware);
 
+61;OMO Have fun not afraid of blot_15s<B>;
+62;Copy Aware;
+63; Aware Copy Base Size:<B>;
+64;Brand Linkage(Among aware);
 
+65;Kispa with ZYJ2 Movie<B>;
+66;Copy Aware;
+67; Aware Copy Base Size:<B>;
+68;Brand Linkage(Among aware);
 ]
 
 [*set Q='QQ6']
@@ -1118,56 +1108,7 @@ v  $t[Q]='[*do i=1:[[Q]R.#]/2]
               **mmmmm<c><s>',
 
 
-[*data CH1R(;)=
-1;有;
-2;没有;
 
-]
-
-[*set Q='CH1']
-dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
-      r,f,
-v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
-                      [[Q]R.i*2] [*sle]**
-                 [*end i]
-              **Missing<z>
-              **mmmmm<c><s>',
-              
-[*data CH2R(;)=
-1;方太洗碗机;
-2;碧浪洗衣液;
-3;OPPO拍照手机;
-4;伊利金典牛奶;
-998;以上均没有;
-
-]
-
-[*set Q='CH2']
-dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
-      r,f,
-v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
-                      [[Q]R.i*2] [*sle]**
-                 [*end i]
-              **Missing<z>
-              **mmmmm<c><s>',
-
-IF $CH3/4,DI $CH3=998,
-[*data CH3R(;)=
-1;抑菌;
-2;护色;
-3;天然;
-998;以上均没有;
-
-]
-
-[*set Q='CH3']
-dm $t[Q]=$[Q]/[*do i=1:[[Q]R.#]/2][[Q]R.i*2-1],[*end i]
-      r,f,
-v  $t[Q]='[*do i=1:[[Q]R.#]/2] 
-                      [[Q]R.i*2] [*sle]**
-                 [*end i]
-              **Missing<z>
-              **mmmmm<c><s>',
 
 DM $CQ1(99),
 IF $A4/1+2   ,M $CQ1/1 ,

@@ -167,8 +167,8 @@
 !     endif,
 !    [*end h]
 !    [*end b]
-[*data seq1(;)=25;26;27;28;29;30;31;32;33;34;35;36;57;58;59;]
-[*for A=13:14:4:15:7]
+[*data seq1(;)=25;26;27;28;29;30;31;32;33;34;35;36;57;58;59;69;70]
+[*for A=4:7:13:15:16:17]
 [*set q='C40[A]']
   [*for b=[seq1.a]]
   [*for h=2]
@@ -192,16 +192,7 @@
     [*end h]
     [*end b]    
  
-[*set q='C6']
-  [*for b=45]
-  [*for h=2]
-    if $bb[b]/nb, then,
-        t#[q][&b][h]=$t[q]*$h[h],
-        bt="b[b].[Base[b]]",
-        +t#ct[Q]=@$ct[Q]*$h[h],
-     endif,
-    [*end h]
-    [*end b]    
+ 
 
 [*set q='C7']
   [*for b=62]
@@ -212,17 +203,6 @@
      endif,
     [*end h]
     [*end b]    
- 
-[*set q='C8']
-  [*for b=63]
-  [*for h=2]
-    if $bb[b]/nb, then,
-        t#[q][&b][h]=$t[q]*$h[h],
-        bt="b[b].[Base[b]]",
-     endif,
-    [*end h]
-    [*end b]   
-
 
 
 [*set q='A1']
@@ -251,7 +231,7 @@
 [*set q='A3']
   [*for b=40]
   [*for h=2]
-    if $bb[b]/nb.$W/(2+3), then,
+    if $bb[b]/nb.$W/N1, then,
         t#[q][&b][h]=$t[q]*$h[h],
         bt="b[b].[Base[b]]",
      endif,

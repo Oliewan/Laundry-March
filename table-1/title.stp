@@ -42,7 +42,7 @@ VT $TC2010='(C2010) SOA£º£¨Õë¶ÔC1Ñ¡ÔñµÄÆ·ÅÆÑ¯ÎÊ£©ÄúÊÇÍ¨¹ýÊ²Ã´ÇþµÀ¿´µ½»òÌýµ½¹ýÍþÂ
 VT $TC2011='(C2011) SOA£º£¨Õë¶ÔC1Ñ¡ÔñµÄÆ·ÅÆÑ¯ÎÊ£©ÄúÊÇÍ¨¹ýÊ²Ã´ÇþµÀ¿´µ½»òÌýµ½¹ý°×Ã¨ BaimaoÆ·ÅÆµÄ¹ã¸æ»ò²úÆ·ÐÅÏ¢ÄØ£¿(¿É¶àÑ¡)',
 
 VT $TC3='(C3) Copy Awareness£º£¨³öÊ¾¹ã¸æÍ¼Æ¬£©ÇëµãÑ¡Äã×î½ü¿´¹ýµÄ¹ã¸æ£¨¿É¶àÑ¡£©¡£ÇëÏÂÀ­Ò³Ãæ¿´µ½ËùÓÐ¹ã¸æ¡£',
-[*DO A=1:15]
+[*DO A=1:17]
 VT $TC40[A]='(C40[A])C4.Copy Brand linkage (Open-end)£ºÕâÊÇÄÄ¸öÆ·ÅÆµÄ¹ã¸æ£¿£¨¿ª·ÅÌâ£©',
 [*END A]
 
@@ -108,16 +108,16 @@ $REGION/4   :"North*([~4])",
 $D1/1   :"University Student***Yes*([~1])",
 $D1/2   :"No*([~2])",
 
-$CITY/1  :"City***Beijing*([~1])",
-$CITY/2  :"Shanghai*([~2])",
-$CITY/3  :"Guangzhou*([~3])",
-$CITY/4  :"Chengdu*([~4])",
+$province/23  :"City***Beijing*([~1])",
+$province/24  :"Shanghai*([~2])",
+$province/25  :"Guangzhou*([~3])",
+$province/26  :"Chengdu*([~4])",
 
-$PROVINCE/22    :"Province***¹ãÎ÷  *([~1 ])",
+$PROVINCE/17    :"Province***¹ãÎ÷  *([~1 ])",
 $PROVINCE/16+26 :"ËÄ´¨Ê¡*([~2 ])",
 $PROVINCE/13    :"ÉÂÎ÷Ê¡*([~3 ])",
 $PROVINCE/9     :"¸£½¨Ê¡*([~4 ])",
-$PROVINCE/35    :"ÖØÇìÊÐ*([~5 ])",
+$PROVINCE/15    :"ÖØÇìÊÐ*([~5 ])",
 $PROVINCE/11    :"ºþ±±Ê¡*([~6 ])",
 $PROVINCE/10+25 :"¹ã¶«Ê¡*([~7 ])",
 $PROVINCE/4     :"ºÓ±±Ê¡*([~8 ])",
@@ -132,9 +132,7 @@ $PROVINCE/1     :"ºÓÄÏÊ¡*([~13])",
 ($REGION/4+$CITY/2..5).($A4/1+2)    :"North+4 China1+1***([~1])",
 ($A4/1+2)   :"China1+/1***([~1])",
 
-$ori/1  :"¶¨Ïò***ÐËÈ¤¶¨Ïò(x)*([~1])",
-$ori/2  :"app¶¨Ïò(a)*([~2])",
-$ori/3  :"ÒÆ¶¯Ã½ÌåÀàÐÍ¶¨Ïò(l)*([~3])",
+
 
 
 [*do i=1:6]

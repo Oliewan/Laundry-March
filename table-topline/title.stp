@@ -4,7 +4,7 @@ VT $TB1='【UBA】',
 VT $TB2='【ABA】',
 VT $TB3='【P3M】',
 VT $TB4='(B4) B4.CONSIDERATION：如果买不到上述品牌，你会考虑替代的品牌是？Assume any other brands you are to purchase as a substitute  if your most frequent-buying brand is out of stock. (Multiple-answer question/ Open Question)',   
-VT $TBS4='【CONSIDERATION SET】',			
+VT $TBS4='【Consideration Set】',			
 VT $TC1='(C1) CAA：最近您看过以下哪些品牌的广告或产品信息？（包括视频广告，户外，店内等）（可多选）',
 
 VT $TC201='【SOA - 碧浪 Ariel】',
@@ -20,9 +20,9 @@ VT $TC2010='【SOA - 威露士Walch】',
 VT $TC2011='【SOA - 白猫 Baimao】',
 
 VT $TC3='(C3) Copy Awareness (4 copies)：（出示广告图片）请点选你最近看过的广告（可多选）。请下拉页面看到所有广告。',
-[*DO A=1:12]
-VT $TC40[A]='(C40[A])C4.Copy Brand linkage (Open-end)：这是哪个品牌的广告？（开放题）',
-[*END A]
+![*DO A=1:17]
+!VT $TC40[A]='(C40[A])C4.Copy Brand linkage (Open-end)：这是哪个品牌的广告？（开放题）',
+![*END A]
 
 VT $TC5='(C5) C5.Tide Color广告传达的主要产品功效是？',
 VT $TC6='(C6) C6.Ariel Neptune Liutao 15s video广告传达的主要产品功效是？',
@@ -40,9 +40,7 @@ VT $TTF1010='(F1010) F1010.Equity attribute-威露士Walch',
 VT $TTF1011='(F1011) F1011.Equity attribute-白猫 Baimao',
 
 VT $TD1='(D1) D1.（针对A1选择18-24岁人士）请问您是在校大学生吗？',
-VT $TCH1='(H1) H1.您是否有看过节目《亲爱的客栈》呢？		',
-VT $TCH2='(H2) H2.您在《亲爱的客栈》节目中看到过以下哪些品牌的产品？（多选）		',
-VT $TCH3='(H3) H3.你最记得碧浪洗衣液的什么特点？（单选）	',
+
 VT $TSE1 ='【SOA Effectiveness - 碧浪 Ariel】',
 VT $TSE2 ='【SOA Effectiveness - 蓝月亮 Blue Moon】',
 VT $TSE3 ='【SOA Effectiveness - 超能 Chaoneng】',
@@ -57,14 +55,14 @@ VT $TSE11='【SOA Effectiveness - 白猫 Baimao Baimao】',
 
 !!HEADER1
 dm x $h1=
-$w/1..4    :"1st half***([~1])",
+$w/1..3    :"1st half***([~1])",
 $w/1       :"National***Aug*([~1])",
 $W/2       :"Sep*([~2])",
 $W/3       :"Nov*([~3])",
 $W/4       :"Jan*([~4])",
 $W/5       :"March*([~5])",
 
-$Region/4.($w/1..4)  :"1st half-North***([~1])",
+$Region/4.($w/1..3)  :"1st half-North***([~1])",
 $Region/4.$w/1       :"North***Aug*([~1])",
 $Region/4.$W/2       :"Sep*([~2])",
 $Region/4.$W/3       :"Nov*([~3])",
@@ -405,7 +403,31 @@ t    :"Walch***Curent wave*([~1])",
 t    :"Last wave*([~2])",
 t    :"Baimao***Curent wave*([~1])",
 t    :"Last wave*([~2])",
-xt $h21="SOA",  
+xt $h21="SOA",
+
+dm x $h22=
+
+$w/1       :"National***Aug*([~1])",
+$W/2       :"Sep*([~2])",
+$W/3       :"Nov*([~3])",
+$W/4       :"Jan*([~4])",
+$W/5       :"March*([~5])",
+
+
+$Region/4.$w/1       :"North***Aug*([~1])",
+$Region/4.$W/2       :"Sep*([~2])",
+$Region/4.$W/3       :"Nov*([~3])",
+$Region/4.$W/4       :"Jan*([~4])",
+$Region/4.$W/5       :"March*([~5])",
+xt $h22="Total+North",  
+
+dm x $h23=
+$W/5    :"Wave***March*([~1])",
+$w/1..3    :"1st half*([~2])",
+$W/4    :"Jan*([~2])",
+  
+
+xt $h23="KPI By Breakout", 
 
 
 

@@ -92,117 +92,140 @@
 
 
 
-!!!Aug
-!!清空数据，留下stub和header，共9列
-T # EA8(f=nitb) = $tTF101 * $h9, 
+!!!!Aug
+!!!清空数据，留下stub和header，共9列
+!T # 17EA8(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/1.$atb/n[a], then,
+!        t#17EA8=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Aug】",
+!     endif,
+!    [*end b]
+![*end A]
+!
+!
+!
+!
+!!!!Sep
+!T # 17EA9(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/2, then,
+!        t#17EA9=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Sep】",
+!     endif,
+!    [*end b]
+![*end A]
+!
+!!!!Nov
+!T # 17EA11(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/3, then,
+!        t#17EA11=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Nov】",
+!     endif,
+!    [*end b]
+![*end A]
+!
+!!!!Jan
+!T # 18EA1(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/4, then,
+!        t#18EA1=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Jan】",
+!     endif,
+!    [*end b]
+![*end A]
+
+!!!March
+T # 18EA3(f=nitb) = $tTF101 * $h9, 
 [*for A=7:1:2:5:8:4:3:6:9:10:11] 
 [*set q='TF10[A]']
   [*for b=[A]+2]
-    if $bb[b]/nb.$W/1.$atb/n[a], then,
-        t#EA8=$t[q]*[SEQ.A],
+    if $bb[b]/nb.$W/5, then,
+        t#18EA3=$t[q]*[SEQ.A],
         bt="主品牌",  
-        vt="【Equity Attribute-Aug】",
+        vt="【Equity Attribute-March】",
      endif,
     [*end b]
 [*end A]
 
+!!!!North-Aug
+!T # 17EAN8(f=nitb) = $tTF101 * $h9, 
+!
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/1.$region/4.$atb/n[a], then,
+!        t#17EAN8=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Aug-North】",
+!     endif,
+!    [*end b]
+![*end A]
+!
+!!!!Sep-North
+!T # 17EAN9(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/2.$region/4, then,
+!        t#17EAN9=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Sep-North】",
+!     endif,
+!    [*end b]
+![*end A]
+!
+!!!!Nov-North
+!T # 17EAN11(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/3.$region/4, then,
+!        t#17EAN11=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Nov-North】",
+!     endif,
+!    [*end b]
+![*end A]
+!
+!!!!Jan-North
+!T # 18EAN1(f=nitb) = $tTF101 * $h9, 
+![*for A=7:1:2:5:8:4:3:6:9:10:11] 
+![*set q='TF10[A]']
+!  [*for b=[A]+2]
+!    if $bb[b]/nb.$W/4.$region/4, then,
+!        t#18EAN1=$t[q]*[SEQ.A],
+!        bt="主品牌",  
+!        vt="【Equity Attribute-Jan-North】",
+!     endif,
+!    [*end b]
+![*end A]
 
-
-
-!!!Sep
-T # EA9(f=nitb) = $tTF101 * $h9, 
+!!!March-North
+T # 18EAN3(f=nitb) = $tTF101 * $h9, 
 [*for A=7:1:2:5:8:4:3:6:9:10:11] 
 [*set q='TF10[A]']
   [*for b=[A]+2]
-    if $bb[b]/nb.$W/2, then,
-        t#EA9=$t[q]*[SEQ.A],
+    if $bb[b]/nb.$W/5.$region/4, then,
+        t#18EAN3=$t[q]*[SEQ.A],
         bt="主品牌",  
-        vt="【Equity Attribute-Sep】",
+        vt="【Equity Attribute-March-North】",
      endif,
     [*end b]
 [*end A]
-
-!!!Nov
-T # EA11(f=nitb) = $tTF101 * $h9, 
-[*for A=7:1:2:5:8:4:3:6:9:10:11] 
-[*set q='TF10[A]']
-  [*for b=[A]+2]
-    if $bb[b]/nb.$W/3, then,
-        t#EA11=$t[q]*[SEQ.A],
-        bt="主品牌",  
-        vt="【Equity Attribute-Nov】",
-     endif,
-    [*end b]
-[*end A]
-
-!!!Jan
-T # EA1(f=nitb) = $tTF101 * $h9, 
-[*for A=7:1:2:5:8:4:3:6:9:10:11] 
-[*set q='TF10[A]']
-  [*for b=[A]+2]
-    if $bb[b]/nb.$W/4, then,
-        t#EA1=$t[q]*[SEQ.A],
-        bt="主品牌",  
-        vt="【Equity Attribute-Jan】",
-     endif,
-    [*end b]
-[*end A]
-
-
-!!!North-Aug
-T # EAN8(f=nitb) = $tTF101 * $h9, 
-
-[*for A=7:1:2:5:8:4:3:6:9:10:11] 
-[*set q='TF10[A]']
-  [*for b=[A]+2]
-    if $bb[b]/nb.$W/1.$region/4.$atb/n[a], then,
-        t#EAN8=$t[q]*[SEQ.A],
-        bt="主品牌",  
-        vt="【Equity Attribute-Aug-North】",
-     endif,
-    [*end b]
-[*end A]
-
-!!!Sep-North
-T # EAN9(f=nitb) = $tTF101 * $h9, 
-[*for A=7:1:2:5:8:4:3:6:9:10:11] 
-[*set q='TF10[A]']
-  [*for b=[A]+2]
-    if $bb[b]/nb.$W/2.$region/4, then,
-        t#EAN9=$t[q]*[SEQ.A],
-        bt="主品牌",  
-        vt="【Equity Attribute-Sep-North】",
-     endif,
-    [*end b]
-[*end A]
-
-!!!Nov-North
-T # EAN11(f=nitb) = $tTF101 * $h9, 
-[*for A=7:1:2:5:8:4:3:6:9:10:11] 
-[*set q='TF10[A]']
-  [*for b=[A]+2]
-    if $bb[b]/nb.$W/3.$region/4, then,
-        t#EAN11=$t[q]*[SEQ.A],
-        bt="主品牌",  
-        vt="【Equity Attribute-Nov-North】",
-     endif,
-    [*end b]
-[*end A]
-
-!!!Jan-North
-T # EAN1(f=nitb) = $tTF101 * $h9, 
-[*for A=7:1:2:5:8:4:3:6:9:10:11] 
-[*set q='TF10[A]']
-  [*for b=[A]+2]
-    if $bb[b]/nb.$W/4.$region/4, then,
-        t#EAN1=$t[q]*[SEQ.A],
-        bt="主品牌",  
-        vt="【Equity Attribute-Jan-North】",
-     endif,
-    [*end b]
-[*end A]
-
-
 
 
 
@@ -427,7 +450,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 [*set q='QQ6']
   [*for b=38]
-  [*for h=1]
+  [*for h=22]
     if $bb[b]/nb, then,
         t#[q][&b][h](f=nRBL)=$t[q]*$h[h],
         bt="b[b].[Base[b]]",
@@ -497,7 +520,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 ]
 
 [*set q='KP13']
-  [*for h=6]
+  [*for h=23]
     if $fiem/1.$m/1, then, 
        t#131=@$B5N07*$h[h],
        V="[kp13R.2]",
@@ -514,7 +537,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 [*set q='KP11']
   [*for b=1]
-  [*for h=6]
+  [*for h=23]
     if $bb[b]/nb, then,
         t#[q][&b][h]=$t[q]*$h[h],
         bt="b[b].[Base[b]]",
@@ -525,7 +548,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 [*set q='KP12']
   [*for b=1]
-  [*for h=6]
+  [*for h=23]
     if $bb[b]/nb, then,
         t#[q][&b][h]=$t[q]*$h[h],
         bt="b[b].[Base[b]]",
@@ -545,7 +568,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 
 [*set q='KP23']
-  [*for h=6]
+  [*for h=23]
     if $fiem/1.$m/1, then, 
        t#231=@$B5N01*$h[h],
        V="[kp23R.2]",
@@ -563,7 +586,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 [*set q='KP21']
   [*for b=1]
-  [*for h=6]
+  [*for h=23]
     if $bb[b]/nb, then,
         t#[q][&b][h]=$t[q]*$h[h],
         bt="b[b].[Base[b]]",
@@ -574,7 +597,7 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 [*set q='KP22']
   [*for b=1]
-  [*for h=6]
+  [*for h=23]
     if $bb[b]/nb, then,
         t#[q][&b][h]=$t[q]*$h[h],
         bt="b[b].[Base[b]]",
@@ -637,10 +660,10 @@ mt #TNSOA(R1,C[[A]*2])=#BS4AK1(R0,C8),
 
 
 [*data bkseq(;)=
-1;$w/3;$w/4;
-2;$w/3;$w/4;
-3;$w/3.$m/1;$w/4.$m/1;
-4;$w/3.$m/1;$w/4.$m/1;
+1;$w/4;$w/5;
+2;$w/4;$w/5;
+3;$w/4.$m/1;$w/5.$m/1;
+4;$w/4.$m/1;$w/5.$m/1;
 ]
 
 [*for a=7:1:2:5:8:4:3:6:9:10:11] 
@@ -662,17 +685,17 @@ t#bk[a](f=nitb)=$tbk11*$h8,
 
 
 
-[*set q='CQ1']
-  [*for b=1]
-  [*for h=5]
-    if $bb[b]/nb, then,
-        t#[q][&b][h]=$t[q]*$h[h],
-        bt="b[b].[Base[b]]",
-        VT="【ADHOC】",
-     endif,
-    [*end h]
-    [*end b]
-    
+![*set q='CQ1']
+!  [*for b=1]
+!  [*for h=5]
+!    if $bb[b]/nb, then,
+!        t#[q][&b][h]=$t[q]*$h[h],
+!        bt="b[b].[Base[b]]",
+!        VT="【ADHOC】",
+!     endif,
+!    [*end h]
+!    [*end b]
+!    
 
 
 

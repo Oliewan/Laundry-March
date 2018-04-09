@@ -205,8 +205,8 @@ T # SEAN(f=nitb) = $tTF101 * $h4,
     [*end b] 
 
 
-[*data seq1(;)=25;26;27;28;29;30;31;32;33;34;35;36;57;58;59;]
-[*for A=13:14:4:15:7]
+[*data seq1(;)=25;26;27;28;29;30;31;32;33;34;35;36;57;58;59;69;70;]
+[*for A=4:7:13:15:16:17]
 [*set q='C40[A]']
   [*for b=[seq1.a]]
   [*for h=1]
@@ -230,15 +230,7 @@ T # SEAN(f=nitb) = $tTF101 * $h4,
     [*end h]
     [*end b]    
  
-[*set q='C8']
-  [*for b=63]
-  [*for h=1]
-    if $bb[b]/nb, then,
-        t#[q][&b][h]=$t[q]*$h[h],
-        bt="b[b].[Base[b]]",
-     endif,
-    [*end h]
-    [*end b]    
+   
 
 
 [*set q='A1']
@@ -328,11 +320,11 @@ T # SEAN(f=nitb) = $tTF101 * $h4,
 
 
 [*set q='CH4']
-  [*for b=61]
+  [*for b=1]
   [*for h=1]
-    if $bb[b]/nb, then,
+    if $bb[b]/nb.($w/4+5).$m/2, then,
         t#[q][&b][h]=$t[q]*$h[h],
-        bt="b[b].[Base[b]]",
+        bt="wave4&wave5",
         +t#ct[Q]=@$ct[Q]*$h[h],
      endif,
     [*end h]
@@ -429,13 +421,5 @@ T # SEAN(f=nitb) = $tTF101 * $h4,
     [*end h]
     [*end b]
     
-[*set q='ori']
-  [*for b=1]
-  [*for h=1]
-    if $bb[b]/nb.$ori/nb, then,
-        t#[q]=$t[q]*$h[h],
-        bt="¶¨Ïò-base",
-     endif,
-    [*end h]
-    [*end b]
+
 

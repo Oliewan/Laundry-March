@@ -3067,13 +3067,12 @@
  Record 422007
                      $DL is 1
           Questionnaire rejected at line 11588. Errors 1
- 11617 lines read from \¿ì¾ö²â\ÎÒµÄÏîÄ¿\Laundry\March¡¾ÓëJanµÄV5°æÒ»ÖÂ¡¿\ddm\Laundry-TW1.DAT
-F 277 Faulty serial number 'ï»¿510001     1    35     3     1                                         3    1' position=11618
-          Questionnaire rejected at line 11618. Errors 1
- 771 lines read from \¿ì¾ö²â\ÎÒµÄÏîÄ¿\Laundry\March¡¾ÓëJanµÄV5°æÒ»ÖÂ¡¿\ddm\TEST-M1.DAT
-F 277 Faulty serial number 'ï»¿520001     1    32     5     1     2                                   2     ' position=12389
-          Questionnaire rejected at line 12389. Errors 1
- 455 lines read from \¿ì¾ö²â\ÎÒµÄÏîÄ¿\Laundry\March¡¾ÓëJanµÄV5°æÒ»ÖÂ¡¿\ddm\TEST-M2.DAT
- Data lines read 12843
- Records 12843
+ 11617 lines read from \QD\my project\Laundry\March\ddm\Laundry-TW1.DAT
+ 2149 lines read from \QD\my project\Laundry\March\ddm\Laundry-W5-M1.DAT
+ Record 522152
+                     $IOBS is 522152
+          Questionnaire rejected at line 15729. Errors 1
+ 2000 lines read from \QD\my project\Laundry\March\ddm\Laundry-W5-M2.DAT
+ Data lines read 15766
+ Records 15766
  End of data
